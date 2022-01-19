@@ -1,0 +1,1 @@
+{"mappings":"AAEA;EACE,OAHM","sources":["Movies4U-client/src/index.scss"],"sourcesContent":["$color: steelblue;\r\n\r\n.my-movie4u {\r\n  color: $color;\r\n}"],"names":[],"version":3,"file":"index.7a25e774.css.map","sourceRoot":"/__parcel_source_root/"}
