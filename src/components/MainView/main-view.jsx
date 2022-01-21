@@ -1,6 +1,11 @@
 import React from "react";
+import axios from "axios";
+
 import { MovieCard } from "../MovieCard/movie-card";
 import { MovieView } from "../MovieView/movie-view";
+import { report } from "process";
+
+
 export class MainView extends React.Component{
     constructor(){
         super();
@@ -13,26 +18,47 @@ export class MainView extends React.Component{
           selectedMovies:null
         };
     }
+    
+    componentDidMount(){
+        axios.get('https://themovies4u.herokuapp.com/movies')
+        .then(response => {
+            this.setState({
+                movies: response.data
+                
+                });
+            }
+        )
+    }
+    
     setSelectedMovie(newSelectedMovie) {
         this.setState({
           selectedMovie: newSelectedMovie
         });
     }
-     render() {
+    
+    render() {
     const { movies, selectedMovie } = this.state;
     if (movies.length === 0) 
-    if (movies.length === 0) return <div className="main-view">The list is empty!</div>;
+    return <div className="main-view" />;
 
     return (
         <div className="main-view">
           {selectedMovie
-            ? <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
-            : movies.map(movie => (
-              <MovieCard key={movie._id} movie={movie} onMovieClick={(movie) => { this.setSelectedMovie(movie) }}/>
-            ))
-          }
-        </div>
-      );
+            ? <MovieView 
+            movie={selectedMovie} 
+            onBackClick=
+            {newSelectedMovie => 
+                { this.setSelectedMovie(newSelectedMovie); }}/>
+            
+                : movies.map(movie => 
+                    (<MovieCard 
+                        key={movie._id} 
+                        movie={movie} 
+                        onMovieClick={newSelectedMovie => 
+                            { this.setSelectedMovie(newSelectedMovie) }}/>
+                        ))
+                    }
+                </div>
+            );
+        }
     }
-  
-}
