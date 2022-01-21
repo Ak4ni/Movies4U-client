@@ -22904,20 +22904,20 @@ class MainView extends _reactDefault.default.Component {
                 {
                     _id: 1,
                     Title: 'Inception',
-                    Description: 'desc1...',
-                    ImagePath: '...'
+                    Description: 'A thief who steals corporate secrets through the use of dream sharing technology is given the inverse task of planting an idea into the mind of a C.E.O. but his tragic past may doom the project and his team to disaster.',
+                    ImagePath: 'https://images-na.ssl-images-amazon.com/images/S/apesafeframe/ape/sf/desktop/DAsf-1.50.b9438f1.js'
                 },
                 {
                     _id: 2,
                     Title: 'The Shawshank Redemption',
-                    Description: 'desc2...',
-                    ImagePath: '...'
+                    Description: 'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.',
+                    ImagePath: 'https://images-na.ssl-images-amazon.com/images/S/apesafeframe/ape/sf/desktop/DAsf-1.50.b9438f1.js'
                 },
                 {
                     _id: 3,
                     Title: 'Gladiator',
-                    Description: 'desc3...',
-                    ImagePath: '...'
+                    Description: 'A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery',
+                    ImagePath: '"https://images-na.ssl-images-amazon.com/images/S/apesafeframe/ape/sf/desktop/DAsf-1.50.b9438f1.js"'
                 }
             ],
             selectedMovies: null
@@ -22929,49 +22929,13 @@ class MainView extends _reactDefault.default.Component {
         });
     }
     render() {
-        return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
-            className: "main-view",
-            __source: {
-                fileName: "Movies4U-client/src/components/MainView/main-view.jsx",
-                lineNumber: 23
-            },
-            __self: this,
-            children: [
-                /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                    __source: {
-                        fileName: "Movies4U-client/src/components/MainView/main-view.jsx",
-                        lineNumber: 24
-                    },
-                    __self: this,
-                    children: "Inceprtion"
-                }),
-                /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                    __source: {
-                        fileName: "Movies4U-client/src/components/MainView/main-view.jsx",
-                        lineNumber: 25
-                    },
-                    __self: this,
-                    children: "The Shawsshank Redemption"
-                }),
-                /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                    __source: {
-                        fileName: "Movies4U-client/src/components/MainView/main-view.jsx",
-                        lineNumber: 26
-                    },
-                    __self: this,
-                    children: "Gladiator"
-                })
-            ]
-        }));
-    }
-    render() {
         const { movies , selectedMovie  } = this.state;
         if (movies.length === 0) {
             if (movies.length === 0) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
                 className: "main-view",
                 __source: {
                     fileName: "Movies4U-client/src/components/MainView/main-view.jsx",
-                    lineNumber: 34
+                    lineNumber: 24
                 },
                 __self: this,
                 children: "The list is empty!"
@@ -22981,7 +22945,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "Movies4U-client/src/components/MainView/main-view.jsx",
-                lineNumber: 37
+                lineNumber: 27
             },
             __self: this,
             children: selectedMovie ? /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
@@ -22991,7 +22955,7 @@ class MainView extends _reactDefault.default.Component {
                 },
                 __source: {
                     fileName: "Movies4U-client/src/components/MainView/main-view.jsx",
-                    lineNumber: 39
+                    lineNumber: 29
                 },
                 __self: this
             }) : movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
@@ -23001,7 +22965,7 @@ class MainView extends _reactDefault.default.Component {
                     },
                     __source: {
                         fileName: "Movies4U-client/src/components/MainView/main-view.jsx",
-                        lineNumber: 41
+                        lineNumber: 31
                     },
                     __self: this
                 }, movie._id)
