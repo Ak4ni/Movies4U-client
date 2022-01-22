@@ -1,21 +1,22 @@
 import React from "react";
 import axios from "axios";
+import PropTypes from "prop-types"
 
 import { MovieCard } from "../MovieCard/movie-card";
 import { MovieView } from "../MovieView/movie-view";
 import { report } from "process";
+import { LoginView } from "../LoginView/login-view";
+import {RegistrationView} from "../RegistrarionView/registration-view"
 
 
 export class MainView extends React.Component{
     constructor(){
         super();
+        /* Initial state is set to null  */
         this.state = {
-          movies: [
-            { _id: 1, Title: 'Inception', Description: 'A thief who steals corporate secrets through the use of dream sharing technology is given the inverse task of planting an idea into the mind of a C.E.O. but his tragic past may doom the project and his team to disaster.', ImagePath:'https://images-na.ssl-images-amazon.com/images/S/apesafeframe/ape/sf/desktop/DAsf-1.50.b9438f1.js'},
-            { _id: 2, Title: 'The Shawshank Redemption', Description: 'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.', ImagePath: 'https://images-na.ssl-images-amazon.com/images/S/apesafeframe/ape/sf/desktop/DAsf-1.50.b9438f1.js'},
-            { _id: 3, Title: 'Gladiator', Description: 'A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery', ImagePath: '"https://images-na.ssl-images-amazon.com/images/S/apesafeframe/ape/sf/desktop/DAsf-1.50.b9438f1.js"'}
-          ],
-          selectedMovies:null
+          movies: [],
+          selectedMovies:null,
+          user:null
         };
     }
     
@@ -26,23 +27,54 @@ export class MainView extends React.Component{
                 movies: response.data
                 
                 });
-            }
-        )
+            })
+            .catch(error => {
+                console.error(error);
+            });
     }
-    
-    setSelectedMovie(newSelectedMovie) {
+    /* When a movie is clicked, this function is invoked and updates the state of 
+    the 'selectedMovie' *property to that movie*/
+    setSelectedMovie(movie) {
         this.setState({
-          selectedMovie: newSelectedMovie
+          selectedMovie: movie
+        });
+    }
+
+    /* user registration*/
+
+    onRegistration(registration){
+        this.setState({
+            registration,
+        });
+    }
+    /* When a user successfully logs in, this function updaates the 'user' property 
+    in state to that *particular user */
+    onlogegedIn(user) {
+        this.setState({
+            selectedMovie: movie
         });
     }
     
     render() {
-    const { movies, selectedMovie } = this.state;
+    const { movies, selectedMovie, user, registration } = this.state;
+
+    if (!registration) 
+    return (<RegistrationView onRegistration={(registration)=> this.onRegistration(registration)} />)
+    
+    /* If there is no user, the LoginView is rendered. If there is a user logged in, 
+    the user details are *passed as a prop to the LoginView */
+    if (!user) 
+    return <LoginView onlogegedIn={user => this.onlogegedIn(user)} />
+    
+    // before the movies have been loaded
     if (movies.length === 0) 
     return <div className="main-view" />;
 
     return (
         <div className="main-view">
+            {/* If the state of 'selectedMovie' is not null that selected movie will
+            be return otherwise, all *movies will be returned */}
+    
           {selectedMovie
             ? <MovieView 
             movie={selectedMovie} 
