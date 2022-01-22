@@ -970,7 +970,7 @@ _reactDomDefault.default.render(/*#__PURE__*/ _reactDefault.default.createElemen
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-dom":"gkWJK","./components/MainView/main-view":"4zHYU","./index.scss":"jUTZ8","@parcel/transformer-js/src/esmodule-helpers.js":"fuToF","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"eXUPr"}],"8xIwr":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-dom":"gkWJK","./components/MainView/main-view":"4zHYU","@parcel/transformer-js/src/esmodule-helpers.js":"fuToF","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"eXUPr","./index.scss":"jUTZ8"}],"8xIwr":[function(require,module,exports) {
 'use strict';
 module.exports = require('./cjs/react-jsx-runtime.development.js');
 
@@ -22854,7 +22854,7 @@ class MainView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","prop-types":"1tgq3","../MovieCard/movie-card":"3Mcqa","../MovieView/movie-view":"dV8Or","process":"eDQMw","../LoginView/login-view":"9r9Rz","../RegistrarionView/registration-view":"4mefV","@parcel/transformer-js/src/esmodule-helpers.js":"fuToF","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"eXUPr"}],"iYoWk":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","prop-types":"1tgq3","../MovieCard/movie-card":"3Mcqa","../MovieView/movie-view":"dV8Or","process":"eDQMw","@parcel/transformer-js/src/esmodule-helpers.js":"fuToF","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"eXUPr","../LoginView/login-view":"9r9Rz","../RegistrarionView/registration-view":"4mefV"}],"iYoWk":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"3QmO2"}],"3QmO2":[function(require,module,exports) {
