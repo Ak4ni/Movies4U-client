@@ -1,6 +1,8 @@
-import React from "react";
-import axios from "axios";
-import PropTypes from "prop-types"
+import React from 'react';
+import axios from 'axios';
+import PropTypes from 'prop-types';
+import './main-view.scss';
+import { Container, Row, Col } from 'react-bootstrap'
 
 import { MovieCard } from "../MovieCard/movie-card";
 import { MovieView } from "../MovieView/movie-view";
