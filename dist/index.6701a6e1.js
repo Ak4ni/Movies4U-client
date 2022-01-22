@@ -25159,7 +25159,7 @@ MovieCard.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","prop-types":"1tgq3","@parcel/transformer-js/src/esmodule-helpers.js":"fuToF","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"eXUPr"}],"fuToF":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","@parcel/transformer-js/src/esmodule-helpers.js":"fuToF","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"eXUPr","axios":"iYoWk"}],"fuToF":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
