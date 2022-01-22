@@ -7,8 +7,8 @@ import { Container, Row, Col } from 'react-bootstrap'
 import { MovieCard } from "../MovieCard/movie-card";
 import { MovieView } from "../MovieView/movie-view";
 import { report } from "process";
-import { LoginView } from "../LoginView/login-view";
-import {RegistrationView} from "../RegistrarionView/registration-view"
+//import { LoginView } from "../LoginView/login-view";
+//import {RegistrationView} from "../RegistrarionView/registration-view"
 
 
 export class MainView extends React.Component{
@@ -44,29 +44,29 @@ export class MainView extends React.Component{
 
     /* user registration*/
 
-    onRegistration(registration){
-        this.setState({
-            registration,
-        });
-    }
+    //onRegistration(registration){
+        //this.setState({
+          //  registration,
+       // });
+    //}
     /* When a user successfully logs in, this function updaates the 'user' property 
     in state to that *particular user */
-    onlogegedIn(user) {
-        this.setState({
-            selectedMovie: movie
-        });
-    }
+    //onLogegedIn(user) {
+      //  this.setState({
+        //    user
+       // });
+    //}
     
     render() {
-    const { movies, selectedMovie, user, registration } = this.state;
+    const { movies, selectedMovie } = this.state;
 
-    if (!registration) 
-    return (<RegistrationView onRegistration={(registration)=> this.onRegistration(registration)} />)
+  //  if (!registration) 
+    //return (<RegistrationView onRegistration={(registration)=> this.onRegistration(registration)} />)
     
     /* If there is no user, the LoginView is rendered. If there is a user logged in, 
     the user details are *passed as a prop to the LoginView */
-    if (!user) 
-    return <LoginView onlogegedIn={user => this.onlogegedIn(user)} />
+    //if (!user) 
+    //return <LoginView onlogegedIn={user => this.onlogegedIn(user)} />
     
     // before the movies have been loaded
     if (movies.length === 0) 
