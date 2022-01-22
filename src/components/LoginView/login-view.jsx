@@ -12,7 +12,7 @@ export function LoginView(props) {
         console.log(username, password);
         /* Send a request to the server for authentication */
         /* then call props.onLoggedIn(username) */
-        props.onLoggedIn(username);
+        //props.onLoggedIn(username);
     };
 
     return (
@@ -51,5 +51,5 @@ LoginView.propTypes = {
         username: PropTypes.string.isRequired,
         password: PropTypes.string.isRequired
     }),
-    onLoggedIn: PropTypes.func.isRequired,
+    onLoggedIn: PropTypes.func.isRequired
 };
