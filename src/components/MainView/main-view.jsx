@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import PropTypes from 'prop-types';
 import './main-view.scss';
 import { Row, Col } from 'react-bootstrap';
 
@@ -32,23 +31,26 @@ export class MainView extends React.Component{
                 console.error(error);
             });
     }
-    /* When a movie is clicked, this function is invoked and updates the state of 
-    the 'selectedMovie' *property to that movie*/
+
+    /* When a movie is clicked, this function is invoked and updates the state of the 'selectedMovie' *property to that movie*/
+
     setSelectedMovie(movie) {
         this.setState({
           selectedMovie: movie
         });
     }
-     /* User registers */
+
+    /* User registers */
+
     onRegistration(registration) {
         this.setState({
           registration,
         });
     }
 
-    /* When a user successfully logs in, this function updaates the 'user' property 
-    in state to that *particular user */
-    onLogegedIn(user) {
+    /* When a user successfully logs in, this function updaates the 'user' property in state to that *particular user */
+   
+    onLoggedIn(user) {
         this.setState({
             user
         });
@@ -61,7 +63,7 @@ export class MainView extends React.Component{
 
         /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are *passed as a prop to the LoginView*/
             if (!user) 
-            return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+            return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
         
         
         // before the movies have been loaded
