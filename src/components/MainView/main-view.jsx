@@ -49,33 +49,28 @@ export class MainView extends React.Component{
     }
     
     render() {
-    const { movies, selectedMovie } = this.state;
-
-    // before the movies have been loaded
-    if (movies.length === 0) 
-    return <div className="main-view" />;
-
-    return (
-        <div className="main-view">
-            {/* If the state of 'selectedMovie' is not null that selected movie will
-            be return otherwise, all *movies will be returned */}
-    
-          {selectedMovie
-            ? <MovieView 
-            movie={selectedMovie} 
-            onBackClick=
-            {newSelectedMovie => 
-                { this.setSelectedMovie(newSelectedMovie); }}/>
-            
-                : movies.map(movie => 
-                    (<MovieCard 
-                        key={movie._id} 
-                        movie={movie} 
-                        onMovieClick={newSelectedMovie => 
-                            { this.setSelectedMovie(newSelectedMovie) }}/>
-                        ))
-                    }
-                </div>
-            );
-        }
-    }
+        const { movies, selectedMovie } = this.state;
+            // before the movies have been loaded
+            if (movies.length === 0) 
+                    return (
+                        <div className="main-view">
+                        {/* If the state of 'selectedMovie' is not null that selected movie will
+                        be return otherwise, all *movies will be returned */}
+                            {selectedMovie
+                                ? <MovieView 
+                                    movie={selectedMovie}  
+                                        onBackClick=
+                                        {newSelectedMovie => 
+                                        { this.setSelectedMovie(newSelectedMovie); }}/>
+                                            : movies.map(movie => 
+                                      (<MovieCard 
+                                    key={movie._id} 
+                                movie={movie} 
+                            onMovieClick={newSelectedMovie => 
+                       { this.setSelectedMovie(newSelectedMovie) }}/>
+                   ))              
+               }
+        </div>
+       ); 
+     } 
+ }
