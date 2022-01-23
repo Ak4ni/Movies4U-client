@@ -1,6 +1,4 @@
 import React from 'react';
-import axios from 'axios';
-import PropTypes from 'prop-types';
 import './movie-view.scss';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 
