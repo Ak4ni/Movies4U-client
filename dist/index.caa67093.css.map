@@ -1,1 +1,1 @@
-{"mappings":"AAEA;EACE,OAHM","sources":["src/index.scss"],"sourcesContent":["$color: steelblue;\r\n\r\n.my-movie4u {\r\n  color: $color;\r\n}"],"names":[],"version":3,"file":"index.caa67093.css.map","sourceRoot":"/__parcel_source_root/"}
+{"mappings":"AAAA;EACE;EACA;EACA;EACA","sources":["src/index.scss"],"sourcesContent":["* {\r\n  box-sizing: border-box;\r\n  font-family: 'Montserrat', sans-serif;\r\n  background-color: #353535;\r\n  color: #ffffff;\r\n}"],"names":[],"version":3,"file":"index.caa67093.css.map","sourceRoot":"/__parcel_source_root/"}
