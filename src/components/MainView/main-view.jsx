@@ -2,12 +2,12 @@ import React from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import './main-view.scss';
+import { Row, Col } from 'react-bootstrap';
 
-import { MovieCard } from "../MovieCard/movie-card";
-import { MovieView } from "../MovieView/movie-view";
-import { report } from "process";
-
-
+import { LoginView } from '../LoginView/login-view';
+import { RegistrationView } from '../RegistrarionView/registration-view';
+import { MovieCard } from '../MovieCard/movie-card';
+import { MovieView } from '../MovieView/movie-view';
 
 export class MainView extends React.Component{
     constructor(){
@@ -39,6 +39,12 @@ export class MainView extends React.Component{
           selectedMovie: movie
         });
     }
+     /* User registers */
+    onRegistration(registration) {
+        this.setState({
+          registration,
+        });
+    }
 
     /* When a user successfully logs in, this function updaates the 'user' property 
     in state to that *particular user */
@@ -49,28 +55,32 @@ export class MainView extends React.Component{
     }
     
     render() {
-        const { movies, selectedMovie } = this.state;
-            // before the movies have been loaded
-            if (movies.length === 0) 
-                    return (
-                        <div className="main-view">
-                        {/* If the state of 'selectedMovie' is not null that selected movie will
-                        be return otherwise, all *movies will be returned */}
-                            {selectedMovie
-                                ? <MovieView 
-                                    movie={selectedMovie}  
-                                        onBackClick=
-                                        {newSelectedMovie => 
-                                        { this.setSelectedMovie(newSelectedMovie); }}/>
-                                            : movies.map(movie => 
-                                      (<MovieCard 
-                                    key={movie._id} 
-                                movie={movie} 
-                            onMovieClick={newSelectedMovie => 
-                       { this.setSelectedMovie(newSelectedMovie) }}/>
-                   ))              
-               }
-        </div>
-       ); 
-     } 
- }
+        const { movies, selectedMovie, user, registration } = this.state;
+        if (!registration) 
+        return (<RegistrationView onRegistration={(registration) => this.onRegistration(registration)} />);
+
+        /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are *passed as a prop to the LoginView*/
+            if (!user) 
+            return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+        
+        
+        // before the movies have been loaded
+            if (movies.length === 0) return <div className='main-view' />
+            return (
+                <Row className="main-view justify-content-md-center">
+                  {selectedMovie
+                    ? (
+                      <Col md={8}>
+                        <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />
+                      </Col>
+                    )
+                    : movies.map(movie => (
+                      <Col md={3}>
+                        <MovieCard key={movie._id} movie={movie} onMovieClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
+                      </Col>
+                    ))
+                  }
+                </Row>
+              );
+           }
+        }
