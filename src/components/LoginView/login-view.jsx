@@ -40,7 +40,6 @@ export function LoginView(props) {
         }
         return isReq;
     }
-
     const handleSubmit = (e) => {
         e.preventDefault();
         const isReq = validate();
@@ -51,10 +50,10 @@ export function LoginView(props) {
             }).then(response => {
                 const data = response.data;
                 props.onLoggedIn(data);
-            }).catch(e => {
+            }).catch(e =>{
                 console.log('no such user')
             });
-        };
+        }
     }
 
     return (
