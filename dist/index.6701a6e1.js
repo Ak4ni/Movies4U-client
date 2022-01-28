@@ -23380,8 +23380,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __self: this
                             })
-                        }),
-                        "s"
+                        })
                     ]
                 })
             ]
