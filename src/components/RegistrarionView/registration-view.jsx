@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Form, Button, Card, CardGroup, Col, Row, Container } from 'react-bootstrap';
 import axios from 'axios';
-import { Link, Router } from "react-router-dom";
+
 
 export function RegistrationView(props) {
   const [ Username, setUsername ] = useState('');
@@ -67,11 +67,11 @@ export function RegistrationView(props) {
   
   return (
   
-    <Container fluid style={{paddingTop: '0.75rem'}}>
+    <Container>
       <Row>
         <Col>
           <CardGroup>
-            <Card bg="secondary" text="white" border="light">
+            <Card bg="secondary" text="" border="">
               <Card.Body>
               <Card.Title>Please register</Card.Title>
                 <Form>
