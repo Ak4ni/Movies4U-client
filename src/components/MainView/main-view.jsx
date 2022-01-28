@@ -2,11 +2,10 @@ import React from "react";
 import axios from "axios";
 
 import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Redirect,
-  Link,
+    BrowserRouter as Router,
+    Route,
+    Redirect,
+    Link, Routes,
 } from "react-router-dom";
 
 import { LoginView } from "../LoginView/login-view";
@@ -14,14 +13,14 @@ import { MovieCard } from "../MovieCard/movie-card";
 import { MovieView } from "../MovieView/movie-view";
 import { DirectorView } from "../DirectorView/director-view";
 import { GenreView } from "../GenreView/genre-view";
-import { ProfileView } from "../ProfileView/profile-view";
 import { RegistrationView } from "../RegistrarionView/registration-view";
 import { Navbar, Button, Col, Row } from 'react-bootstrap';
 import "./main-view.scss";
+import ProfileView from "../ProfileView/profile-view";
 
 export class MainView extends React.Component {
-  constructor() {
-    super();
+    constructor(props) {
+    super(props);
     /* Initial state is set to null  */
     this.state = {
       movies: [],
@@ -98,7 +97,6 @@ export class MainView extends React.Component {
           )}
         </Navbar>
         <Row className="main-view justify-content-md-center">
-
           <Routes>
           <Route
             exact
@@ -120,9 +118,8 @@ export class MainView extends React.Component {
               ));
             }}
           />
-          </Routes>
 
-          <Routes>
+
           <Route
             path="/movies/:movieId"
             render={({ match, history }) => {
@@ -143,10 +140,7 @@ export class MainView extends React.Component {
               );
             }}
           />
-          </Routes> 
 
-          
-          <Routes>
           <Route
             path="/directors/:name"
             render={({ match, history }) => {
@@ -170,9 +164,8 @@ export class MainView extends React.Component {
               );
             }}
           />
-          </Routes>
 
-          <Routes>
+
           <Route
             path="/genres/:name"
             render={({ match, history }) => {
@@ -202,9 +195,7 @@ export class MainView extends React.Component {
               );
             }}
           />
-          </Routes>
 
-          <Routes>
           <Route
             path="/register"
             render={() => {
@@ -216,9 +207,7 @@ export class MainView extends React.Component {
               );
             }}
           />
-          </Routes>
 
-          <Routes>
           <Route
             path="/users"
             render={({ history }) => {
