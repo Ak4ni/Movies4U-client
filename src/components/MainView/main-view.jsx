@@ -1,19 +1,17 @@
 import React from "react";
 import axios from "axios";
-import "./main-view.scss";
 
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
-import {  Col, Row } from "react-bootstrap";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
 import { LoginView } from "../LoginView/login-view";
 import { MovieCard } from "../MovieCard/movie-card";
 import { MovieView } from "../MovieView/movie-view";
 import { DirectorView } from "../DirectorView/director-view";
 import { GenreView } from "../GenreView/genre-view";
-import { Navbar } from "../Navbar/navbar";
+import {ProfileView} from "../ProfileView/profile-view"
 import { RegistrationView } from "../RegistrarionView/registration-view";
-import { Navbar, Button, Col, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
+import "./main-view.scss";
 
 export class MainView extends React.Component {
   constructor() {
@@ -24,6 +22,25 @@ export class MainView extends React.Component {
       user: null,
     };
   }
+
+  getMovies(token) {
+    axios
+      .get("https://themovies4u.herokuapp.com/movies", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => {
+        this.setState({
+          movies: response.data,
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
+
   componentDidMount() {
     let accessToken = localStorage.getItem("token");
     if (accessToken !== null) {
@@ -47,35 +64,19 @@ export class MainView extends React.Component {
     this.setState({ user: null });
   }
 
-  getMovies(token) {
-    axios
-      .get("https://themovies4u.herokuapp.com/movies", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then((response) => {
-        this.setState({
-          movies: response.data,
-        });
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }
+ render() {
+    const { movies } = this.props;
+    const { user } = this.state;
 
-  render() {
-    const { movies, user } = this.state;
-
-    return (
+  return (
       <Router>
+        <div>
         <Row className="main-view justify-content-md-center">
-          <Routes>
             <Route
-              exact
+            exact
               path="/"
               render={() => {
-                if (!user)
+                if (user)
                   return (
                     <Col>
                       <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
@@ -91,8 +92,6 @@ export class MainView extends React.Component {
                 ));
               }}
             />
-          </Routes>
-          <Routes>
             <Route
               path="/movies/:movieId"
               render={({ match, history }) => {
@@ -116,8 +115,6 @@ export class MainView extends React.Component {
                 );
               }}
             />
-          </Routes>
-          <Routes>
             <Route
               path="/directors/:name"
               render={({ match, history }) => {
@@ -144,8 +141,6 @@ export class MainView extends React.Component {
                 );
               }}
             />
-          </Routes>
-          <Routes>
             <Route
               path="/genres/:name"
               render={({ match, history }) => {
@@ -180,8 +175,6 @@ export class MainView extends React.Component {
                 );
               }}
             />
-          </Routes>
-          <Routes>
             <Route
               path="/register"
               render={() => {
@@ -193,8 +186,6 @@ export class MainView extends React.Component {
                 );
               }}
             />
-          </Routes>
-          <Routes>
             <Route
               path="/users"
               render={({ history }) => {
@@ -218,8 +209,8 @@ export class MainView extends React.Component {
                 );
               }}
             />
-          </Routes>
         </Row>
+        </div>
       </Router>
     );
   }
