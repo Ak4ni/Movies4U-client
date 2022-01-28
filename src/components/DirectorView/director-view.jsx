@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { Container, Card, Button } from "react-bootstrap";
 
@@ -33,7 +34,7 @@ export class DirectorView extends React.Component {
             <br />
             <div className="backButton">
               <Link to={`/`}>
-                <Button className="returnButton" variant="dark">
+                <Button className="returnButton" variant="">
                   Back
                 </Button>
               </Link>
@@ -44,3 +45,12 @@ export class DirectorView extends React.Component {
     );
   }
 }
+DirectorView.propTypes = {
+  Director: PropTypes.shape({
+      Name: PropTypes.string.isRequired,
+      Bio: PropTypes.string.isRequired,
+      Birthyear: PropTypes.string,
+      Deathyear: PropTypes.string
+    }),
+    onBackClick: PropTypes.func.isRequired
+};
