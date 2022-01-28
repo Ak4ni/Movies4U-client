@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types'
 import { Link } from "react-router-dom";
 import { Button, Card } from "react-bootstrap";
 
@@ -21,7 +22,7 @@ export class GenreView extends React.Component {
               <span className="value">{Genre.Description}</span>
             </div>
             <Link to={`/`}>
-              <Button className="returnButton" variant="dark">
+              <Button className="returnButton" variant="">
                 Return
               </Button>
             </Link>
@@ -31,3 +32,10 @@ export class GenreView extends React.Component {
     );
   }
 }
+GenreView.propTypes = {
+  Genre: PropTypes.shape({
+      Name: PropTypes.string,
+      Description: PropTypes.string
+  }),
+  onBackClick: PropTypes.func.isRequired
+};
