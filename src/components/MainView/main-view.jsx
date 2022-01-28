@@ -240,7 +240,7 @@ export class MainView extends React.Component {
               );
             }}
           />
-          </Routes>s
+          </Routes>
         </Row>
       </Router>
     );
