@@ -3,18 +3,16 @@ import axios from "axios";
 
 import {
     BrowserRouter as Router,
-    Route,
-    Redirect,
-    Link, Routes,
+    Route
 } from "react-router-dom";
 
 import { LoginView } from "../LoginView/login-view";
+import { RegistrationView } from "../RegistrarionView/registration-view";
 import { MovieCard } from "../MovieCard/movie-card";
 import { MovieView } from "../MovieView/movie-view";
 import { DirectorView } from "../DirectorView/director-view";
 import { GenreView } from "../GenreView/genre-view";
-import { RegistrationView } from "../RegistrarionView/registration-view";
-import { Navbar, Button, Col, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import "./main-view.scss";
 import ProfileView from "../ProfileView/profile-view";
 
@@ -73,29 +71,6 @@ export class MainView extends React.Component {
 
     return (
       <Router>
-        <Navbar bg="secondary" expand="lg" className="mb-4" sticky="top">
-          <Navbar.Brand className="ml-4">
-            <Link style={{ color: "" }} to={"/"}>
-              Movies4U
-            </Link>
-          </Navbar.Brand>
-          {user && (
-            <Navbar.Collapse className="justify-content-end">
-              <Link to={`/users/${user}`} className="mr-2">
-                <Button variant="" style={{ color: "" }}>
-                  Profile for {user}
-                </Button>
-              </Link>
-              <Button
-                onClick={() => this.onLoggedOut()}
-                variant=""
-                style={{ color: "" }}
-              >
-                Logout
-              </Button>
-            </Navbar.Collapse>
-          )}
-        </Navbar>
         <Row className="main-view justify-content-md-center">
           <Routes>
           <Route
