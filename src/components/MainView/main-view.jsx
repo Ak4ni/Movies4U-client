@@ -5,7 +5,7 @@ import {
     BrowserRouter as Router,
     Route,
     Redirect,
-    Link, Routes,
+    Link, Routes
 } from "react-router-dom";
 
 import { LoginView } from "../LoginView/login-view";
@@ -16,7 +16,7 @@ import { GenreView } from "../GenreView/genre-view";
 import { RegistrationView } from "../RegistrarionView/registration-view";
 import { Navbar, Button, Col, Row } from 'react-bootstrap';
 import "./main-view.scss";
-import ProfileView from "../ProfileView/profile-view";
+import { ProfileView } from "../ProfileView/profile-view";
 
 export class MainView extends React.Component {
     constructor(props) {
@@ -55,7 +55,7 @@ export class MainView extends React.Component {
   /* When a user successfully logs in, this function updaates the 'user' property in state to that *particular user */
   onLoggedIn(authData) {
     console.log(authData);
-    this.setState({ user: authData.user.Username });
+    this.setState({ users: authData.user.Username });
 
     localStorage.setItem("token", authData.token);
     localStorage.setItem("user", authData.user.Username);
@@ -65,11 +65,11 @@ export class MainView extends React.Component {
   onLoggedOut() {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
-    this.setState({ user: null });
+    this.setState({ users: null });
   }
 
   render() {
-    const { movies, user } = this.state;
+    const { movies, users } = this.state;
 
     return (
       <Router>
@@ -79,11 +79,11 @@ export class MainView extends React.Component {
               Movies4U
             </Link>
           </Navbar.Brand>
-          {user && (
+          {users && (
             <Navbar.Collapse className="justify-content-end">
-              <Link to={`/users/${user}`} className="mr-2">
+              <Link to={`/users/${users}`} className="mr-2">
                 <Button variant="" style={{ color: "" }}>
-                  Profile for {user}
+                  Profile for {users}
                 </Button>
               </Link>
               <Button
@@ -98,14 +98,12 @@ export class MainView extends React.Component {
         </Navbar>
         <Row className="main-view justify-content-md-center">
           <Routes>
-          <Route
-            exact
-            path="/"
+          <Route exact path='/' element={<LoginView />}
             render={() => {
-              if (!user)
+              if (!users)
                 return (
                   <Col>
-                    <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
+                    <LoginView onLoggedIn={(user) => this.onLoggedIn(users)} />
                   </Col>
                 );
 
@@ -121,11 +119,11 @@ export class MainView extends React.Component {
 
 
           <Route
-            path="/movies/:movieId"
+            path="/movies/:movieId" element={<MovieView />}
             render={({ match, history }) => {
-              if (!user) return;
+              if (!users) return;
               <Col>
-                <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
+                <LoginView onLoggedIn={(user) => this.onLoggedIn(users)} />
               </Col>;
 
               if (movies.length === 0) return <div className="main-view" />;
@@ -142,12 +140,12 @@ export class MainView extends React.Component {
           />
 
           <Route
-            path="/directors/:name"
+            path="/directors/:name" element={<DirectorView />}
             render={({ match, history }) => {
-              if (!user)
+              if (!users)
                 return (
                   <Col>
-                    <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
+                    <LoginView onLoggedIn={(user) => this.onLoggedIn(users)} />
                   </Col>
                 );
               if (movies.length === 0) return <div className="main-view" />;
@@ -167,18 +165,18 @@ export class MainView extends React.Component {
 
 
           <Route
-            path="/genres/:name"
+            path="/genres/:name" element={<GenreView />}
             render={({ match, history }) => {
-              if (!user) return;
+              if (!users) return;
               <Col>
-                <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
+                <LoginView onLoggedIn={(user) => this.onLoggedIn(users)} />
               </Col>;
 
               if (movies.length === 0) return <div className="main-view" />;
-              if (!user)
+              if (!users)
                 return (
                   <Col>
-                    <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
+                    <LoginView onLoggedIn={(user) => this.onLoggedIn(users)} />
                   </Col>
                 );
               if (movies.length === 0) return <div className="main-view" />;
@@ -197,9 +195,9 @@ export class MainView extends React.Component {
           />
 
           <Route
-            path="/register"
+            path="/register" element={<RegistrationView />}
             render={() => {
-              if (user) return <Redirect to="/" />;
+              if (users) return <Redirect to="/" />;
               return (
                 <Col lg={8} md={8}>
                   <RegistrationView />
@@ -209,12 +207,12 @@ export class MainView extends React.Component {
           />
 
           <Route
-            path="/users"
+            path="/users" element={<ProfileView />}
             render={({ history }) => {
-              if (!user)
+              if (!users)
                 return (
                   <Col>
-                    <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
+                    <LoginView onLoggedIn={(user) => this.onLoggedIn(users)} />
                   </Col>
                 );
               if (movies.length === 0) return <div className="main-view" />;
