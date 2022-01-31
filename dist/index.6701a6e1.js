@@ -40253,7 +40253,7 @@ class ProfileView extends _reactDefault.default.Component {
     }
     getUser = (token)=>{
         const Username = localStorage.getItem('user');
-        _axiosDefault.default.get('https://orishflix.herokuapp.com/users/${Username}', {
+        _axiosDefault.default.get('https://themovies4u.herokuapp.com/users/${Username}', {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -40274,7 +40274,7 @@ class ProfileView extends _reactDefault.default.Component {
         e.preventDefault();
         const Username = localStorage.getItem('user');
         const token = localStorage.getItem('token');
-        _axiosDefault.default.put('https://orishflix.herokuapp.com/users/${Username}', {
+        _axiosDefault.default.put('https://themovies4u.herokuapp.com/users/${Username}', {
             Username: this.state.Username,
             Password: this.state.Password,
             Email: this.state.Email,
@@ -40305,7 +40305,7 @@ class ProfileView extends _reactDefault.default.Component {
         e.preventDefault();
         const Username = localStorage.getItem('user');
         const token = localStorage.getItem('token');
-        _axiosDefault.default.delete('https://orishflix.herokuapp.com/users/${Username}/movies/${movie._id}', {
+        _axiosDefault.default.delete('https://themovies4u.herokuapp.com/users/${Username}/movies/${movie._id}', {
             headers: {
                 Authorization: `Bearer ${token}`
             }
