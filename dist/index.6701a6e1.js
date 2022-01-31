@@ -26552,9 +26552,9 @@ module.exports = require('./factoryWithTypeCheckers')(ReactIs.isElement, throwOn
 
 },{"react-is":"5wFcP","./factoryWithTypeCheckers":"gMSjX"}],"5wFcP":[function(require,module,exports) {
 'use strict';
-module.exports = require('react-is/cjs/react-is.development');
+module.exports = require('./cjs/react-is.development.js');
 
-},{"react-is/cjs/react-is.development":"dxS2U"}],"dxS2U":[function(require,module,exports) {
+},{"./cjs/react-is.development.js":"dxS2U"}],"dxS2U":[function(require,module,exports) {
 /** @license React v16.13.1
  * react-is.development.js
  *
