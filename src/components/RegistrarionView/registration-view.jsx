@@ -7,11 +7,11 @@ import axios from 'axios';
 export function RegistrationView(props) {
   const [ Username, setUsername ] = useState('');
   const [ Password, setPassword ] = useState('');
-  const [ email, setEmail ] = useState('');
+  const [ Email, setEmail ] = useState('');
   const [ Birthdate, setBirthdate ] = useState('');
   const [ UsernameErr, setUsernameErr ] = useState('');
   const [ PasswordErr, setPasswordErr ] = useState('');
-  const [ emailErr, setemailErr ] = useState('');
+  const [ emailErr, setEmailErr ] = useState('');
   const [ BirthdateErr, setBirthdateErr ] = useState('');
 
   const validate = () => {
@@ -30,10 +30,10 @@ export function RegistrationView(props) {
      setPasswordErr('Password must be 8 characters long');
      isReq = false;
     }
-    if(!email){
-      setemailErr('Please user valid email')
-    } else if(email.indexOf('@') === -1){
-      setemailErr('Please user valid email')
+    if(!Email){
+      setEmailErr('Please user valid email')
+    } else if(Email.indexOf('@') === -1){
+      setEmailErr('Please user valid email')
       isReq = false;
     }
     if(!Birthdate){
@@ -51,7 +51,7 @@ export function RegistrationView(props) {
         axios.post('https://themovies4u.herokuapp.com/users', {
           Username: Username,
           Password: Password,
-          email: email,
+          Email: Email,
           Birthdate: Birthdate
         })
         .then(response => {
@@ -73,7 +73,7 @@ export function RegistrationView(props) {
           <CardGroup>
             <Card bg="secondary" text="" border="">
               <Card.Body>
-              <Card.Title>Please register</Card.Title>
+              <Card.Title>Please Register!</Card.Title>
                 <Form>
                     <Form.Group>
                       <Form.Label> Username: </Form.Label>
@@ -100,7 +100,7 @@ export function RegistrationView(props) {
                       <Form.Label>Email:</Form.Label>
                       <Form.Control 
                       type="text" 
-                      value={email} 
+                      value={Email} 
                       onChange={e => setEmail(e.target.value)} 
                       required
                       placeholder="Enter your email"/> 
