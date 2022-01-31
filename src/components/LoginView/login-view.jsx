@@ -47,13 +47,15 @@ export function LoginView(props) {
             axios.post('https://themovies4u.herokuapp.com/movies', {
                 Username: username,
                 Password: password
-            }).then(response => {
+            })
+            .then(response => {
                 const data = response.data;
                 props.onLoggedIn(data);
-            }).catch(e =>{
+            })
+            .catch(e => {
                 console.log('no such user')
             });
-        }
+        };
     }
 
     return (
@@ -104,9 +106,3 @@ export function LoginView(props) {
     );
 }
 
-LoginView.propTypes = {
-    user: PropTypes.shape(
-        {username: PropTypes.string.isRequired, password: PropTypes.string.isRequired}
-    ),
-    onLoggedIn: PropTypes.func.isRequired
-};
