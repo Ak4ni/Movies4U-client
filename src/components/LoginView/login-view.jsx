@@ -28,14 +28,14 @@ export function LoginView(props) {
             setUsernameErr('Username Required');
             isReq = false;
         } else if (username.length < 6) {
-            setUsernameErr('Username must be 2 characters long');
+            setUsernameErr('Username must be 6 characters long');
             isReq = false;
         }
         if (!password) {
             setPaswordErr('Password Required');
             isReq = false;
         } else if (password.length < 8) {
-            setPassword('Password must be at least 6 characters long');
+            setPassword('Password must be at least 8 characters long');
             isReq = false;
         }
         return isReq;
@@ -44,18 +44,16 @@ export function LoginView(props) {
         e.preventDefault();
         const isReq = validate();
         if (isReq) { /* Send a request to the server for authentication */
-            axios.post('https://themovies4u.herokuapp.com/login', {
+            axios.post("https://themovies4u.herokuapp.com/login", {
                 Username: username,
                 Password: password
-            })
-            .then(response => {
+            }).then(response => {
                 const data = response.data;
                 props.onLoggedIn(data);
-            })
-            .catch(e => {
+            }).catch(e =>{
                 console.log('no such user')
             });
-        };
+        }
     }
 
     return (
@@ -106,3 +104,8 @@ export function LoginView(props) {
     );
 }
 
+LoginView.propTypes = {
+    user: PropTypes.shape(
+        {username: PropTypes.string.isRequired, password: PropTypes.string.isRequired}
+    )
+};
