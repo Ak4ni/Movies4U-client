@@ -48,7 +48,9 @@ export class MainView extends React.Component {
   componentDidMount() {
     let accessToken = localStorage.getItem("token");
     if (accessToken !== null) {
-      this.setState({ user: localStorage.getItem("user") });
+      this.setState({ 
+        user: localStorage.getItem("user") 
+    });
       this.getMovies(accessToken);
     }
   }
@@ -103,7 +105,7 @@ export class MainView extends React.Component {
               if (!users)
                 return (
                   <Col>
-                    <LoginView onLoggedIn={(user) => this.onLoggedIn(users)} />
+                    <LoginView onLoggedIn={(users) => this.onLoggedIn(users)} />
                   </Col>
                 );
 
@@ -111,7 +113,7 @@ export class MainView extends React.Component {
 
               return movies.map((m) => (
                 <Col md={3} key={m._id}>
-                  <MovieCard movie={m} />
+                  <MovieCard movie={this.movie} onMovieClick={() => {}} />
                 </Col>
               ));
             }}
@@ -123,7 +125,7 @@ export class MainView extends React.Component {
             render={({ match, history }) => {
               if (!users) return;
               <Col>
-                <LoginView onLoggedIn={(user) => this.onLoggedIn(users)} />
+                <LoginView onLoggedIn={users => this.onLoggedIn(users)} />
               </Col>;
 
               if (movies.length === 0) return <div className="main-view" />;
@@ -131,7 +133,7 @@ export class MainView extends React.Component {
                 <Col md={8}>
                   <MovieView
                     movie={movies.find((m) => m._id === match.params.movieId)}
-                    user={user}
+                    user={users}
                     onBackClick={() => history.goBack()}
                   />
                 </Col>
@@ -145,7 +147,7 @@ export class MainView extends React.Component {
               if (!users)
                 return (
                   <Col>
-                    <LoginView onLoggedIn={(user) => this.onLoggedIn(users)} />
+                    <LoginView onLoggedIn={(users) => this.onLoggedIn(users)} />
                   </Col>
                 );
               if (movies.length === 0) return <div className="main-view" />;
@@ -169,14 +171,14 @@ export class MainView extends React.Component {
             render={({ match, history }) => {
               if (!users) return;
               <Col>
-                <LoginView onLoggedIn={(user) => this.onLoggedIn(users)} />
+                <LoginView onLoggedIn={(users) => this.onLoggedIn(users)} />
               </Col>;
 
               if (movies.length === 0) return <div className="main-view" />;
               if (!users)
                 return (
                   <Col>
-                    <LoginView onLoggedIn={(user) => this.onLoggedIn(users)} />
+                    <LoginView onLoggedIn={(users) => this.onLoggedIn(users)} />
                   </Col>
                 );
               if (movies.length === 0) return <div className="main-view" />;
@@ -212,7 +214,7 @@ export class MainView extends React.Component {
               if (!users)
                 return (
                   <Col>
-                    <LoginView onLoggedIn={(user) => this.onLoggedIn(users)} />
+                    <LoginView onLoggedIn={(users) => this.onLoggedIn(users)} />
                   </Col>
                 );
               if (movies.length === 0) return <div className="main-view" />;
