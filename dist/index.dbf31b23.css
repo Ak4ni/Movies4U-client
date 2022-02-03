@@ -1,16 +1,12 @@
 * {
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
-  background-color: #141414;
-  color: #f7f3f3;
+  background-color: #dfdfdf;
+  color: #111111;
 }
 
 body {
   padding: inherit;
-}
-
-.form-control {
-  background-color: #111111;
 }
 * {
   box-sizing: border-box;
@@ -35,6 +31,18 @@ body {
   color: #faf9f9;
 }
 
+.ml-4 {
+  background-attachment: fixed;
+  background-color: transparent;
+}
+
+.mr-2 {
+  background-color: turquoise;
+}
+
+.navbar-logo {
+  color: turquoise;
+}
 * {
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
