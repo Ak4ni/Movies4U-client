@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { Form, Button, Card, CardGroup, Col, Row, Container } from 'react-bootstrap';
 import axios from 'axios';
 
@@ -116,7 +115,7 @@ export function RegistrationView(props) {
                       placeholder="Enter your Birthdate"/>
                       {BirthdateErr && <p>{BirthdateErr}</p>}
                   </Form.Group>
-                  <Button variant="light" style={{ color: "white" }} type="submit"
+                  <Button variant="dark" style={{ color: "white" }} type="submit"
                       onClick={handleSubmit}>
                         Submit
                   </Button> 
