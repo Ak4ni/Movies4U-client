@@ -1,25 +1,25 @@
 import React from 'react';
+import axios from 'axios';
+import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
-import { MainView } from '../src/components/MainView/main-view';
+import { MainView } from './components/MainView/main-view';
 import Container from 'react-bootstrap/Container';
+
 
 // Import statement to indicate that you need to bundle `./index.scss`
 import './index.scss';
 
 // Main component (will eventually use all the others)
 class Movies4UApplication extends React.Component {
-  render() {
-    return (
-      <Container>   
-         <MainView />
-      </Container>
-     
-    );
-  }
+    render() {
+        return (
+            <MainView />
+        );
+    }
 }
 
-// Finds the root of your app
+// Find the root of myFlix app
 const container = document.getElementsByClassName('app-container')[0];
 
-// Tells React to render your app in the root DOM element
-ReactDOM.render(React.createElement(Movies4UApplication), container);
+// Tell React to render myFlix app in the root DOM element
+ReactDOM.render(<Movies4UApplication />, container);
