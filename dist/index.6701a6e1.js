@@ -25113,11 +25113,8 @@ class MainView extends _reactDefault.default.Component {
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
                                     exact: true,
                                     path: "/",
-<<<<<<< Updated upstream
-=======
                                     element: /*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
                                     }),
->>>>>>> Stashed changes
                                     render: ()=>{
                                         if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Redirect, {
                                             to: "/login"
@@ -25154,11 +25151,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/MainView/main-view.jsx",
-<<<<<<< Updated upstream
-                                        lineNumber: 108
-=======
                                         lineNumber: 109
->>>>>>> Stashed changes
                                     },
                                     __self: this
                                 }),
@@ -25177,22 +25170,14 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/MainView/main-view.jsx",
-<<<<<<< Updated upstream
-                                        lineNumber: 121
-=======
                                         lineNumber: 122
->>>>>>> Stashed changes
                                     },
                                     __self: this
                                 }),
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
                                     path: "/movies/:movieId",
-<<<<<<< Updated upstream
                                     element: /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
                                     }),
-=======
-                                    element: _movieView.MovieView,
->>>>>>> Stashed changes
                                     render: ({ match , history  })=>{
                                         if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                             children: /*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
@@ -25213,11 +25198,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/MainView/main-view.jsx",
-<<<<<<< Updated upstream
-                                        lineNumber: 136
-=======
                                         lineNumber: 137
->>>>>>> Stashed changes
                                     },
                                     __self: this
                                 }),
@@ -25241,11 +25222,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/MainView/main-view.jsx",
-<<<<<<< Updated upstream
-                                        lineNumber: 162
-=======
                                         lineNumber: 163
->>>>>>> Stashed changes
                                     },
                                     __self: this
                                 }),
@@ -25276,11 +25253,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/MainView/main-view.jsx",
-<<<<<<< Updated upstream
-                                        lineNumber: 184
-=======
                                         lineNumber: 185
->>>>>>> Stashed changes
                                     },
                                     __self: this
                                 }),
@@ -25311,11 +25284,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/MainView/main-view.jsx",
-<<<<<<< Updated upstream
-                                        lineNumber: 216
-=======
                                         lineNumber: 217
->>>>>>> Stashed changes
                                     },
                                     __self: this
                                 })
