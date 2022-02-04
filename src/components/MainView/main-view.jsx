@@ -85,10 +85,15 @@ export class MainView extends React.Component {
         <NavbarView user={user} />
         <Container>
           <Row className="main-view justify-content-md-center">
+<<<<<<< Updated upstream
           <Routes>
+=======
+            <Routes>
+>>>>>>> Stashed changes
             <Route
               exact
               path="/"
+              element={<LoginView />}
               render={() => {
                 if (!user) {
                   return <Redirect to="/login" />;
@@ -107,7 +112,11 @@ export class MainView extends React.Component {
             />
             <Route
               path="/login"
+<<<<<<< Updated upstream
               element={<LoginView/>}
+=======
+              element={<LoginView />}
+>>>>>>> Stashed changes
               render={() => {
                 if (user) {
                   return <Redirect to="/" />;
@@ -135,7 +144,11 @@ export class MainView extends React.Component {
             />
             <Route
               path="/movies/:movieId"
+<<<<<<< Updated upstream
               element={<MovieView />}
+=======
+              element={MovieView}
+>>>>>>> Stashed changes
               render={({ match, history }) => {
                 if (!user) {
                   return (
