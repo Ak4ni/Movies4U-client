@@ -104,7 +104,7 @@ export class ProfileView extends React.Component {
             )
             .then((response) => {
                 console.log(response);
-                alert("Movie removed");
+                alert("Favorite movie removed");
                 this.componentDidMount();
             })
             .catch(function (error) {
