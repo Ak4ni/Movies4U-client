@@ -7,7 +7,7 @@ import {
     Redirect,
     Link, Routes
 } from "react-router-dom";
-
+import PropTypes  from "prop-types";
 import { LoginView } from "../LoginView/login-view";
 import { MovieCard } from "../MovieCard/movie-card";
 import { MovieView } from "../MovieView/movie-view";
@@ -20,66 +20,70 @@ import "./main-view.scss";
 import { ProfileView } from "../ProfileView/profile-view";
 
 export class MainView extends React.Component {
-    constructor(props) {
-    super(props);
-    /* Initial state is set to null  */
-    this.state = {
-      movies: [],
-      user: null,
-    };
-  }
-
-  getMovies(token) {
-    axios
-      .get("https://themovies4u.herokuapp.com/movies", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then((response) => {
-        this.setState({
-          movies: response.data
-        });
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }
-
-  componentDidMount() {
-    let accessToken = localStorage.getItem("token");
-    if (accessToken !== null) {
-      this.setState({ 
-        user: localStorage.getItem("user") 
-    });
-      this.getMovies(accessToken);
+    constructor() {
+        super();
+        // Initial state is set to null
+        this.state = {
+            movies: [],
+            selectedMovie: null,
+            user: null
+        };
     }
-  }
-  /* When a user successfully logs in, this function updates the 'user' property in state to that *particular user */
-  onLoggedIn(authData) {
-    console.log(authData);
-    this.props.getUser(authData.user.Username);
-    localStorage.setItem("token", authData.token);
-    localStorage.setItem("user", authData.user.Username);
-    this.getMovies(authData.token);
-  }
 
-  onLoggedOut() {
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
-    this.setState({ user: null });
-  }
+    componentDidMount() {
+        let accessToken = localStorage.getItem('token');
+        if (accessToken !== null) {
+            this.setState({
+                user: localStorage.getItem('user')
+            });
+            this.getMovies(accessToken);
+        }
+    }
 
-  render() {
-    const { movies, user } = this.state;
+    /* When a user successfully logs in, this function updates the `user` property in state to that *particular user*/
+    onLoggedIn(authData) {
+        console.log(authData);
+        this.setState({
+            user: authData.user.Username
+        });
 
-    return (
-      <Router>
-        <NavbarView user={user} />
-        <Container>
+        localStorage.setItem('token', authData.token);
+        localStorage.setItem('user', authData.user.Username);
+        this.getMovies(authData.token);
+    }
+
+    onLoggedOut() {
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        this.setState({
+            user: null
+        });
+    }
+
+    getMovies(token) {
+        axios.get(`https://themovies4u.herokuapp.com/movies`, {
+            headers: { Authorization: `Bearer ${token}`}
+        })
+            .then(response => {
+                // Assign the result to the state
+                this.setState({
+                    movies: response.data
+                });
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+
+    render() {
+        const { movies, user } = this.state;
+
+        return (
+            <Router>
+                <NavbarView user={user} />
+                <Container>
                     <Row className="main-view justify-content-md-center">
-                      <Routes>
-                        <Route exact path="/" element={<LoginView />} render={() => {
+                        <Route exact path="/" render={() => {
                             if (!user) {
                                 return <Redirect to="/login" />;
                             }
@@ -94,14 +98,14 @@ export class MainView extends React.Component {
                                 </>
                             );
                         }} />
-                        <Route path="/login" element={<LoginView />} render={() => {
+                        <Route path="/login" render={() => {
                             if (user) {
                                 return <Redirect to="/" />;
                             }
 
                             return <LoginView onLoggedIn={(data) => this.onLoggedIn(data)} />
                         }} />
-                        <Route path="/register" element={<RegistrationView />} render={() => {
+                        <Route path="/register" render={() => {
                             if (user) {
                                 return <Redirect to="/" />;
                             }
@@ -112,7 +116,7 @@ export class MainView extends React.Component {
                                 </Col>
                             );
                         }} />
-                        <Route path="/movies/:movieId" element={<MovieView />} render={({ match, history }) => {
+                        <Route path="/movies/:movieId" render={({ match, history }) => {
                             if (!user) {
                                 return (
                                     <Col>
@@ -133,7 +137,7 @@ export class MainView extends React.Component {
                                 </Col>
                             );
                         }} />
-                        <Route path="/profile" element={<ProfileView />} render={({ history }) => {
+                        <Route path="/profile" render={({ history }) => {
                             if (!user) {
                                 return (
                                     <Col>
@@ -148,7 +152,7 @@ export class MainView extends React.Component {
                                 </Col>
                             );
                         }} />
-                        <Route path="/genres/:name" element={<GenreView />} render={({ match, history }) => {
+                        <Route path="/genres/:name" render={({ match, history }) => {
                             if (!user) {
                                 return (
                                     <Col>
@@ -171,7 +175,7 @@ export class MainView extends React.Component {
                                 </Col>
                             )
                         }} />
-                        <Route path="/directors/:name" element={<DirectorView />} render={({ match, history }) => {
+                        <Route path="/directors/:name" render={({ match, history }) => {
                             if (!user) {
                                 return (
                                     <Col>
@@ -191,10 +195,9 @@ export class MainView extends React.Component {
                                 </Col>
                             );
                         }} />
-                     </Routes> 
-                    </Row> 
+                    </Row>
                 </Container>
-      </Router>
-    );
-  }
+            </Router>
+        );
+    }
 }
