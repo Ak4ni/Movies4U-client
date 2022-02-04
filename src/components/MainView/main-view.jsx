@@ -107,6 +107,7 @@ export class MainView extends React.Component {
             />
             <Route
               path="/login"
+              element={<LoginView/>}
               render={() => {
                 if (user) {
                   return <Redirect to="/" />;
@@ -119,6 +120,7 @@ export class MainView extends React.Component {
             />
             <Route
               path="/register"
+              element={<RegistrationView />}
               render={() => {
                 if (user) {
                   return <Redirect to="/" />;
@@ -133,6 +135,7 @@ export class MainView extends React.Component {
             />
             <Route
               path="/movies/:movieId"
+              element={<MovieView />}
               render={({ match, history }) => {
                 if (!user) {
                   return (
@@ -158,6 +161,7 @@ export class MainView extends React.Component {
             />
             <Route
               path="/profile"
+              element={<ProfileView />}
               render={({ history }) => {
                 if (!user) {
                   return (
@@ -179,6 +183,7 @@ export class MainView extends React.Component {
             />
             <Route
               path="/genres/:name"
+              element={<GenreView />}
               render={({ match, history }) => {
                 if (!user) {
                   return (
@@ -210,6 +215,7 @@ export class MainView extends React.Component {
             />
             <Route
               path="/directors/:name"
+              element={<DirectorView />}
               render={({ match, history }) => {
                 if (!user) {
                   return (
