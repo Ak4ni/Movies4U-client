@@ -103,7 +103,7 @@ export function LoginView(props) {
                     </Button>
                     <Link to="/register">
                       <Button className="ml-3" variant="secondary">
-                        Register now
+                        Register
                       </Button>
                     </Link>
                   </div>
