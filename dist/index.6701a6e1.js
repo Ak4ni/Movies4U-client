@@ -40915,6 +40915,6 @@ ProfileView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","prop-types":"1tgq3","./profile-view.scss":"lOcmi","react-router-dom":"kjA5T","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"fuToF","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"eXUPr"}],"lOcmi":[function() {},{}],"6TRz5":[function() {},{}]},["bZ76G","fnO5o","dLPEP"], "dLPEP", "parcelRequire3b7a")
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","prop-types":"1tgq3","./profile-view.scss":"lOcmi","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"fuToF","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"eXUPr","react-router-dom":"kjA5T"}],"lOcmi":[function() {},{}],"6TRz5":[function() {},{}]},["bZ76G","fnO5o","dLPEP"], "dLPEP", "parcelRequire3b7a")
 
 //# sourceMappingURL=index.6701a6e1.js.map
