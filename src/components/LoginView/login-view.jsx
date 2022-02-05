@@ -42,6 +42,7 @@ export function LoginView(props) {
 
     return isReq;
   };
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -55,13 +56,16 @@ export function LoginView(props) {
         })
         .then((response) => {
           const data = response.data;
-          props.onLoggedIn(data);
+         props.onLoggedIn(data);
         })
         .catch((error) => {
           console.log(error, "no such user");
         });
     }
   };
+
+
+  
 
   return (
     <Container className="profile-view" align="center">
