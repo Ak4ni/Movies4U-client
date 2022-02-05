@@ -5,10 +5,8 @@ import {
   BrowserRouter as Router,
   Route,
   Redirect,
-  Link,
-  Routes,
+  Routes
 } from "react-router-dom";
-import PropTypes from "prop-types";
 import { LoginView } from "../LoginView/login-view";
 import { MovieCard } from "../MovieCard/movie-card";
 import { MovieView } from "../MovieView/movie-view";
@@ -17,17 +15,16 @@ import { GenreView } from "../GenreView/genre-view";
 import { RegistrationView } from "../RegistrarionView/registration-view";
 import { NavbarView } from "../NavbarView/navbar-view";
 import { Container, Col, Row } from "react-bootstrap";
-import "./main-view.scss";
 import { ProfileView } from "../ProfileView/profile-view";
+import "./main-view.scss";
 
 export class MainView extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     // Initial state is set to null
     this.state = {
       movies: [],
-      selectedMovie: null,
-      user: null,
+      user: null
     };
   }
 
@@ -99,7 +96,7 @@ export class MainView extends React.Component {
                   <>
                     {movies.map((movie) => (
                       <Col md={3} key={movie._id}>
-                        <MovieCard movie={movie} onMovieClick={() => {}} />
+                        <MovieCard movie={movie} onMovieClick={() => { }} />
                       </Col>
                     ))}
                   </>
