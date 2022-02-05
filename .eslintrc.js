@@ -13,7 +13,7 @@ module.exports = {
         "ecmaFeatures": {
             "jsx": true
         },
-        "ecmaVersion": "latest",
+        "ecmaVersion": 13,
         "sourceType": "module"
     },
     "plugins": [
@@ -23,8 +23,8 @@ module.exports = {
     "rules": {
     },
     "settings":{
-        "react": {
-            "version": "detect"
+        "react":{
+            "version":"detect"
         }
     }
-}
+};
