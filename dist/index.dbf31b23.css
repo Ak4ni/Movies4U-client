@@ -27,6 +27,16 @@ body {
 * {
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
+  background-color: #141414;
+  color: #fbf7f7;
+}
+.navbar-logo {
+  color: turquoise;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
   background-color: #131212;
   color: #faf9f9;
 }
@@ -38,10 +48,6 @@ body {
 
 .mr-2 {
   background-color: turquoise;
-}
-
-.navbar-logo {
-  color: turquoise;
 }
 * {
   box-sizing: border-box;
