@@ -314,7 +314,7 @@ export class ProfileView extends React.Component {
 }
 
 ProfileView.propTypes = {
-  movies: PropTypes.arrayOf(
+     movies: PropTypes.arrayOf(
     PropTypes.shape({
       Title: PropTypes.string.isRequired,
       Description: PropTypes.string.isRequired,
