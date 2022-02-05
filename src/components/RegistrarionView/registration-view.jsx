@@ -12,7 +12,7 @@ import {
   CardGroup,
 } from "react-bootstrap";
 
-export function RegistrationView(props) {
+export function RegistrationView (props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -84,7 +84,7 @@ export function RegistrationView(props) {
           <CardGroup>
             <Card>
               <Card.Body>
-                <Card.Title>Register now!</Card.Title>
+                <Card.Title>Register Here</Card.Title>
                 <Form>
                   <Form.Group className="mb-3">
                     <Form.Label>Username:</Form.Label>
