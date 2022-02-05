@@ -33,6 +33,7 @@ body {
 .navbar-logo {
   color: turquoise;
 }
+
 * {
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
@@ -48,7 +49,6 @@ body {
 .mr-2 {
   background-color: turquoise;
 }
-
 * {
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
