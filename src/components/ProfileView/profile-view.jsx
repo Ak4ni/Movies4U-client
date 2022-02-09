@@ -5,8 +5,8 @@ import "./profile-view.scss";
 import { Container, Card, Button, Row, Col, Form } from "react-bootstrap";
 
 export class ProfileView extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       Username: null,
@@ -255,11 +255,11 @@ export class ProfileView extends React.Component {
         <Row>
           <Col>
             <Card.Body>
-              {FavoriteMovies.length === 0 && (
+              {FavoriteMovies?.length === 0 && (
                 <div className="text-center">No Favorite Movies</div>
               )}
               <Row className="favorite-container">
-                {FavoriteMovies.length > 0 &&
+                {FavoriteMovies?.length > 0 &&
                   movies.map((movie) => {
                     if (
                       movie._id ===
@@ -325,7 +325,6 @@ ProfileView.propTypes = {
       Director: PropTypes.shape({
         Bio: PropTypes.string.isRequired,
         Birth: PropTypes.string.isRequired,
-        Death: PropTypes.string.isRequired,
         Name: PropTypes.string.isRequired,
       }).isRequired,
     })
