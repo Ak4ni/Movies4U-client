@@ -13,7 +13,7 @@ module.exports = {
         "ecmaFeatures": {
             "jsx": true
         },
-        "ecmaVersion": 13,
+        "ecmaVersion": "latest",
         "sourceType": "module"
     },
     "plugins": [
@@ -21,10 +21,5 @@ module.exports = {
         "@typescript-eslint"
     ],
     "rules": {
-    },
-    "settings":{
-        "react":{
-            "version":"detect"
-        }
     }
-};
+}
