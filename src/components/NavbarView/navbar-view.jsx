@@ -24,7 +24,7 @@ export function NavbarView({user}) {
   return (
     <Navbar className="main-nav" sticky="top" expand="lg" variant="dark">
       <Container fluid>
-        <Navbar.Brand className="navbar-logo" href="/">
+        <Navbar.Brand className="navbar-logo" href="/login">
           Movies4U
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -41,7 +41,7 @@ export function NavbarView({user}) {
                 Logout
               </Button>
             )}
-            {!isAuth() && <Nav.Link href="/">Login</Nav.Link>}
+            {!isAuth() && <Nav.Link href="/login">Login</Nav.Link>}
             {!isAuth() && <Nav.Link href="/register">Register</Nav.Link>}
           </Nav>
         </Navbar.Collapse>
