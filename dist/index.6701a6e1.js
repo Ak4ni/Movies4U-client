@@ -22746,7 +22746,7 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "MainView", ()=>MainView
 );
 var _jsxRuntime = require("react/jsx-runtime");
-/* eslint-disable @typescript-eslint/no-empty-function */ var _react = require("react");
+var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
@@ -22815,7 +22815,7 @@ class MainView extends _reactDefault.default.Component {
         return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.BrowserRouter, {
             __source: {
                 fileName: "src/components/MainView/main-view.jsx",
-                lineNumber: 84
+                lineNumber: 83
             },
             __self: this,
             children: [
@@ -22823,27 +22823,27 @@ class MainView extends _reactDefault.default.Component {
                     user: user,
                     __source: {
                         fileName: "src/components/MainView/main-view.jsx",
-                        lineNumber: 85
+                        lineNumber: 84
                     },
                     __self: this
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
                     __source: {
                         fileName: "src/components/MainView/main-view.jsx",
-                        lineNumber: 86
+                        lineNumber: 85
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                         className: "main-view justify-content-md-center",
                         __source: {
                             fileName: "src/components/MainView/main-view.jsx",
-                            lineNumber: 87
+                            lineNumber: 86
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.Routes, {
                             __source: {
                                 fileName: "src/components/MainView/main-view.jsx",
-                                lineNumber: 88
+                                lineNumber: 87
                             },
                             __self: this,
                             children: [
@@ -22870,7 +22870,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/MainView/main-view.jsx",
-                                        lineNumber: 89
+                                        lineNumber: 88
                                     },
                                     __self: this
                                 }),
@@ -22888,7 +22888,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/MainView/main-view.jsx",
-                                        lineNumber: 109
+                                        lineNumber: 108
                                     },
                                     __self: this
                                 }),
@@ -22907,7 +22907,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/MainView/main-view.jsx",
-                                        lineNumber: 122
+                                        lineNumber: 121
                                     },
                                     __self: this
                                 }),
@@ -22935,7 +22935,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/MainView/main-view.jsx",
-                                        lineNumber: 137
+                                        lineNumber: 136
                                     },
                                     __self: this
                                 }),
@@ -22959,7 +22959,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/MainView/main-view.jsx",
-                                        lineNumber: 163
+                                        lineNumber: 162
                                     },
                                     __self: this
                                 }),
@@ -22990,7 +22990,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/MainView/main-view.jsx",
-                                        lineNumber: 185
+                                        lineNumber: 184
                                     },
                                     __self: this
                                 }),
@@ -23021,7 +23021,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/MainView/main-view.jsx",
-                                        lineNumber: 217
+                                        lineNumber: 216
                                     },
                                     __self: this
                                 })
