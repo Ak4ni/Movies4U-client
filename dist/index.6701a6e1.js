@@ -40992,8 +40992,8 @@ var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _profileViewScss = require("./profile-view.scss");
 var _reactBootstrap = require("react-bootstrap");
 class ProfileView extends _reactDefault.default.Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             Username: null,
             Password: null,
@@ -41381,7 +41381,7 @@ class ProfileView extends _reactDefault.default.Component {
                             },
                             __self: this,
                             children: [
-                                FavoriteMovies.length === 0 && /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                                FavoriteMovies?.length === 0 && /*#__PURE__*/ _jsxRuntime.jsx("div", {
                                     className: "text-center",
                                     __source: {
                                         fileName: "src/components/ProfileView/profile-view.jsx",
@@ -41397,7 +41397,7 @@ class ProfileView extends _reactDefault.default.Component {
                                         lineNumber: 261
                                     },
                                     __self: this,
-                                    children: FavoriteMovies.length > 0 && movies.map((movie)=>{
+                                    children: FavoriteMovies?.length > 0 && movies.map((movie)=>{
                                         if (movie._id === FavoriteMovies.find((fav)=>fav === movie._id
                                         )) return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
                                             className: "favorite-movie card-content",
@@ -41502,7 +41502,6 @@ ProfileView.propTypes = {
         Director: _propTypesDefault.default.shape({
             Bio: _propTypesDefault.default.string.isRequired,
             Birth: _propTypesDefault.default.string.isRequired,
-            Death: _propTypesDefault.default.string.isRequired,
             Name: _propTypesDefault.default.string.isRequired
         }).isRequired
     })).isRequired,
