@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import React from "react";
 import axios from "axios";
 
@@ -7,7 +8,7 @@ import {
   Redirect,
   Routes
 } from "react-router-dom";
-import { LoginView } from "../LoginView/login-view";
+import  { LoginView }  from "../LoginView/login-view";
 import { MovieCard } from "../MovieCard/movie-card";
 import { MovieView } from "../MovieView/movie-view";
 import { DirectorView } from "../DirectorView/director-view";
@@ -22,9 +23,11 @@ export class MainView extends React.Component {
   constructor(props) {
     super(props);
     // Initial state is set to null
+    this.props = props;
     this.state = {
       movies: [],
       user: null
+     
     };
   }
 
@@ -96,7 +99,7 @@ export class MainView extends React.Component {
                   <>
                     {movies.map((movie) => (
                       <Col md={3} key={movie._id}>
-                        <MovieCard movie={movie} onMovieClick={() => { }} />
+                        <MovieCard movie={movie} onMovieClick={() => {}} />
                       </Col>
                     ))}
                   </>
@@ -246,6 +249,6 @@ export class MainView extends React.Component {
           </Row>
         </Container>
       </Router>
-    );
+      );
   }
 }
