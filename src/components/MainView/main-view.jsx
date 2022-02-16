@@ -5,8 +5,7 @@ import axios from "axios";
 import {
   BrowserRouter as Router,
   Route,
-  Redirect,
-  Routes
+  Redirect
 } from "react-router-dom";
 import  { LoginView }  from "../LoginView/login-view";
 import { MovieCard } from "../MovieCard/movie-card";
@@ -17,6 +16,7 @@ import { RegistrationView } from "../RegistrarionView/registration-view";
 import { NavbarView } from "../NavbarView/navbar-view";
 import { Container, Col, Row } from "react-bootstrap";
 import { ProfileView } from "../ProfileView/profile-view";
+import { setMovies } from "../../actions/action";
 import "./main-view.scss";
 
 export class MainView extends React.Component {
@@ -25,7 +25,6 @@ export class MainView extends React.Component {
     // Initial state is set to null
     this.props = props;
     this.state = {
-      movies: [],
       user: null
      
     };
@@ -71,6 +70,7 @@ export class MainView extends React.Component {
         this.setState({
           movies: response.data,
         });
+        this.props.setMovies(response.data);
       })
       .catch(function (error) {
         console.log(error);
@@ -78,7 +78,8 @@ export class MainView extends React.Component {
   }
 
   render() {
-    const { movies, user } = this.state;
+    const { user } = this.state;
+    const { movies } = this.props;
 
     return (
       <Router>
@@ -90,20 +91,11 @@ export class MainView extends React.Component {
               path="/"
               render={() => {
                 if (!user) {
-                  return <Redirect to="/login" />;
-                }
-
-                return (
-                  <>
-                    {movies.map((movie) => (
-                      <Col md={3} key={movie._id}>
-                        <MovieCard movie={movie} onMovieClick={() => {}} />
-                      </Col>
-                    ))}
-                  </>
-                );
-              }}
-            />
+                  return <Col> 
+                  <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+                  </Col>
+                    if (movies.length === 0) return <div className="main-view" />;
+                    return <MoviesList movies={movies}/>; }}} />
             <Route
               path="/login"
               render={() => {
