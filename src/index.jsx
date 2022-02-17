@@ -7,20 +7,20 @@ import moviesApp from './reducers/reducers';
 import { devToolsEnhancer } from 'redux-devtools-extension'
 
 
-import { MainView } from "./components/MainView/main-view";
+import  MainView  from "./components/MainView/main-view";
 
 
 // Import statement to indicate that you need to bundle `./index.scss`
 import "./index.scss";
 
 
-const store = createStore(moviesApp, devToolsEnhancer);
+const movies4UStore = createStore(moviesApp, devToolsEnhancer);
 
 // Main component (will eventually use all the others)
 class Movies4UApplication extends React.Component {
   render() {
     return(
-      <Provider store={store}>
+      <Provider store={movies4UStore}>
          <Container>
            <MainView />
          </Container>
