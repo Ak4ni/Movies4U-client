@@ -2,11 +2,15 @@
 import React from "react";
 import axios from "axios";
 
+import{ connect } from 'react-redux';
+
 import {
   BrowserRouter as Router,
   Route,
   Redirect
 } from "react-router-dom";
+
+import { setMovies } from "../../actions/action"; 
 import  { LoginView }  from "../LoginView/login-view";
 import { MovieCard } from "../MovieCard/movie-card";
 import { MovieView } from "../MovieView/movie-view";
@@ -16,7 +20,6 @@ import { RegistrationView } from "../RegistrarionView/registration-view";
 import { NavbarView } from "../NavbarView/navbar-view";
 import { Container, Col, Row } from "react-bootstrap";
 import { ProfileView } from "../ProfileView/profile-view";
-import { setMovies } from "../../actions/action";
 import "./main-view.scss";
 
 export class MainView extends React.Component {
@@ -91,11 +94,20 @@ export class MainView extends React.Component {
               path="/"
               render={() => {
                 if (!user) {
-                  return <Col> 
-                  <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
-                  </Col>
-                    if (movies.length === 0) return <div className="main-view" />;
-                    return <MoviesList movies={movies}/>; }}} />
+                  return <Redirect to="/login" />;
+                }
+
+                return (
+                  <>
+                    {movies.map((movie) => (
+                      <Col md={3} key={movie._id}>
+                        <MovieCard movie={movie} onMovieClick={() => {}} />
+                      </Col>
+                    ))}
+                  </>
+                );
+              }}
+            />
             <Route
               path="/login"
               render={() => {
