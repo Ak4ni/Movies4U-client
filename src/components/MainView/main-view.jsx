@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import React from "react";
 import axios from "axios";
+import "./main-view.scss";
 
 import{ connect } from 'react-redux';
 
@@ -12,7 +13,7 @@ import {
 
 import { setMovies } from "../../actions/action"; 
 import  { LoginView }  from "../LoginView/login-view";
-import { MovieCard } from "../MovieCard/movie-card";
+import MoviesList from "../MoviesList/movie-list";
 import { MovieView } from "../MovieView/movie-view";
 import { DirectorView } from "../DirectorView/director-view";
 import { GenreView } from "../GenreView/genre-view";
@@ -20,7 +21,6 @@ import { RegistrationView } from "../RegistrarionView/registration-view";
 import { NavbarView } from "../NavbarView/navbar-view";
 import { Container, Col, Row } from "react-bootstrap";
 import { ProfileView } from "../ProfileView/profile-view";
-import "./main-view.scss";
 
 export class MainView extends React.Component {
   constructor(props) {
