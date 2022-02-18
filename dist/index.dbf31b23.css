@@ -28,20 +28,22 @@ body {
   color: turquoise;
 }
 
-* {
-  box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
-  background-color: #131212;
-  color: #faf9f9;
+.main-view {
+  height: 100%;
 }
 
-.ml-4 {
-  background-attachment: fixed;
-  background-color: transparent;
+.navbar {
+  height: 90px;
+  margin-bottom: 10px;
+  background: linear-gradient(#f31414 50%, rgba(241, 15, 15, 0.5), rgba(146, 2, 2, 0) 100%);
 }
 
-.mr-2 {
-  background-color: turquoise;
+.nav-link:hover {
+  color: #f3a411 !important;
+}
+
+.nav-link {
+  margin-left: auto !important;
 }
 * {
   box-sizing: border-box;
