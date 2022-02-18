@@ -986,13 +986,7 @@ class Movies4UApplication extends _reactDefault.default.Component {
 // Find the root of Movies4U app
 const container = document.getElementsByClassName("app-container")[0];
 // Tell React to render Movies4U app in the root DOM element
-_reactDomDefault.default.render(/*#__PURE__*/ _jsxRuntime.jsx(Movies4UApplication, {
-    __source: {
-        fileName: "src/index.jsx",
-        lineNumber: 35
-    },
-    __self: undefined
-}), container);
+_reactDomDefault.default.render(/*#__PURE__*/ _reactDefault.default.createElement(Movies4UApplication), container);
 
   $parcel$ReactRefreshHelpers$b058.postlude(module);
 } finally {
@@ -22828,9 +22822,8 @@ class MainView extends _reactDefault.default.Component {
             }
         }).then((response)=>{
             // Assign the result to the state
-            this.setState({
-                movies: response.data
-            });
+            console.log("setMovies: ", response.data);
+            // Assign the result to the state
             this.props.setMovies(response.data);
         }).catch(function(error) {
             console.log(error);
@@ -22842,7 +22835,7 @@ class MainView extends _reactDefault.default.Component {
         return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.BrowserRouter, {
             __source: {
                 fileName: "src/components/MainView/main-view.jsx",
-                lineNumber: 88
+                lineNumber: 82
             },
             __self: this,
             children: [
@@ -22850,21 +22843,21 @@ class MainView extends _reactDefault.default.Component {
                     user: user,
                     __source: {
                         fileName: "src/components/MainView/main-view.jsx",
-                        lineNumber: 89
+                        lineNumber: 83
                     },
                     __self: this
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
                     __source: {
                         fileName: "src/components/MainView/main-view.jsx",
-                        lineNumber: 90
+                        lineNumber: 84
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
                         className: "main-view justify-content-md-center",
                         __source: {
                             fileName: "src/components/MainView/main-view.jsx",
-                            lineNumber: 91
+                            lineNumber: 85
                         },
                         __self: this,
                         children: [
@@ -22872,24 +22865,21 @@ class MainView extends _reactDefault.default.Component {
                                 exact: true,
                                 path: "/",
                                 render: ()=>{
-                                    if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Redirect, {
-                                        to: "/login"
+                                    if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                                        children: /*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
+                                            onLoggedIn: (user1)=>this.onLoggedIn(user1)
+                                        })
                                     }));
-                                    return(/*#__PURE__*/ _jsxRuntime.jsx(_jsxRuntime.Fragment, {
-                                        children: movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                                                md: 3,
-                                                children: /*#__PURE__*/ _jsxRuntime.jsx(MovieCard, {
-                                                    movie: movie,
-                                                    onMovieClick: ()=>{
-                                                    }
-                                                })
-                                            }, movie._id)
-                                        )
+                                    if (movies.length === 0) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+                                        className: "main-view"
+                                    }));
+                                    return(/*#__PURE__*/ _jsxRuntime.jsx(_movieListDefault.default, {
+                                        movies: movies
                                     }));
                                 },
                                 __source: {
                                     fileName: "src/components/MainView/main-view.jsx",
-                                    lineNumber: 92
+                                    lineNumber: 86
                                 },
                                 __self: this
                             }),
@@ -22905,7 +22895,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/MainView/main-view.jsx",
-                                    lineNumber: 111
+                                    lineNumber: 102
                                 },
                                 __self: this
                             }),
@@ -22922,7 +22912,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/MainView/main-view.jsx",
-                                    lineNumber: 123
+                                    lineNumber: 114
                                 },
                                 __self: this
                             }),
@@ -22948,7 +22938,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/MainView/main-view.jsx",
-                                    lineNumber: 137
+                                    lineNumber: 128
                                 },
                                 __self: this
                             }),
@@ -22970,7 +22960,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/MainView/main-view.jsx",
-                                    lineNumber: 162
+                                    lineNumber: 153
                                 },
                                 __self: this
                             }),
@@ -22999,7 +22989,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/MainView/main-view.jsx",
-                                    lineNumber: 183
+                                    lineNumber: 174
                                 },
                                 __self: this
                             }),
@@ -23028,7 +23018,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/MainView/main-view.jsx",
-                                    lineNumber: 214
+                                    lineNumber: 205
                                 },
                                 __self: this
                             })
@@ -23039,6 +23029,14 @@ class MainView extends _reactDefault.default.Component {
         }));
     }
 }
+let mapStateToProps = (state)=>{
+    return {
+        movies: state.movies
+    };
+};
+exports.default = _reactRedux.connect(mapStateToProps, {
+    setMovies: _action.setMovies
+})(MainView);
 
   $parcel$ReactRefreshHelpers$beb1.postlude(module);
 } finally {
