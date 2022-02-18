@@ -4,7 +4,6 @@ import Container from 'react-bootstrap/Container';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import moviesApp from './reducers/reducers';
-import { devToolsEnhancer } from 'redux-devtools-extension'
 
 
 import  MainView  from "./components/MainView/main-view";
@@ -14,7 +13,7 @@ import  MainView  from "./components/MainView/main-view";
 import "./index.scss";
 
 
-const movies4UStore = createStore(moviesApp, devToolsEnhancer);
+const movies4UStore = createStore(moviesApp, window.REDEX_DEVTOOLS_EXTENSION && window.REDEX_DEVTOOLS_EXTENSION());
 
 // Main component (will eventually use all the others)
 class Movies4UApplication extends React.Component {
