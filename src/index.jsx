@@ -32,4 +32,4 @@ class Movies4UApplication extends React.Component {
 const container = document.getElementsByClassName("app-container")[0];
 
 // Tell React to render Movies4U app in the root DOM element
-ReactDOM.render(<Movies4UApplication />, container);
+ReactDOM.render(React.createElement(Movies4UApplication), container);
