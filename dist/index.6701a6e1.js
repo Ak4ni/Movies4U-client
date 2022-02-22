@@ -42180,7 +42180,7 @@ class MovieView extends _reactDefault.default.Component {
         const { movie , onBackClick  } = this.props;
         return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
             fluid: true,
-            className: "moviesContainer",
+            className: "movie-view",
             __source: {
                 fileName: "src/components/MovieView/movie-view.jsx",
                 lineNumber: 25
@@ -42401,6 +42401,7 @@ class DirectorView extends _reactDefault.default.Component {
         const { director , onBackClick , movies  } = this.props;
         return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
             fluid: true,
+            className: "director-view",
             __source: {
                 fileName: "src/components/DirectorView/director-view.jsx",
                 lineNumber: 13
@@ -43122,6 +43123,8 @@ var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactBootstrap = require("react-bootstrap");
+var _visibilityFilterInput = require("../visibility-filter-input/visibility-filter-input");
+var _visibilityFilterInputDefault = parcelHelpers.interopDefault(_visibilityFilterInput);
 var _navbarViewScss = require("./navbar-view.scss");
 function NavbarView({ user  }) {
     const onLoggedOut = ()=>{
@@ -43140,14 +43143,14 @@ function NavbarView({ user  }) {
         variant: "dark",
         __source: {
             fileName: "src/components/NavbarView/navbar-view.jsx",
-            lineNumber: 24
+            lineNumber: 25
         },
         __self: this,
         children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
             fluid: true,
             __source: {
                 fileName: "src/components/NavbarView/navbar-view.jsx",
-                lineNumber: 25
+                lineNumber: 26
             },
             __self: this,
             children: [
@@ -43156,7 +43159,7 @@ function NavbarView({ user  }) {
                     href: "/login",
                     __source: {
                         fileName: "src/components/NavbarView/navbar-view.jsx",
-                        lineNumber: 26
+                        lineNumber: 27
                     },
                     __self: this,
                     children: "Movies4U"
@@ -43165,7 +43168,7 @@ function NavbarView({ user  }) {
                     "aria-controls": "responsive-navbar-nav",
                     __source: {
                         fileName: "src/components/NavbarView/navbar-view.jsx",
-                        lineNumber: 29
+                        lineNumber: 30
                     },
                     __self: this
                 }),
@@ -43173,14 +43176,14 @@ function NavbarView({ user  }) {
                     id: "responsive-navbar-nav",
                     __source: {
                         fileName: "src/components/NavbarView/navbar-view.jsx",
-                        lineNumber: 30
+                        lineNumber: 31
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Nav, {
                         className: "ml-auto",
                         __source: {
                             fileName: "src/components/NavbarView/navbar-view.jsx",
-                            lineNumber: 31
+                            lineNumber: 32
                         },
                         __self: this,
                         children: [
@@ -43188,7 +43191,7 @@ function NavbarView({ user  }) {
                                 href: "/profile",
                                 __source: {
                                     fileName: "src/components/NavbarView/navbar-view.jsx",
-                                    lineNumber: 32
+                                    lineNumber: 33
                                 },
                                 __self: this,
                                 children: user
@@ -43200,7 +43203,7 @@ function NavbarView({ user  }) {
                                 },
                                 __source: {
                                     fileName: "src/components/NavbarView/navbar-view.jsx",
-                                    lineNumber: 34
+                                    lineNumber: 35
                                 },
                                 __self: this,
                                 children: "Logout"
@@ -43209,7 +43212,7 @@ function NavbarView({ user  }) {
                                 href: "/login",
                                 __source: {
                                     fileName: "src/components/NavbarView/navbar-view.jsx",
-                                    lineNumber: 43
+                                    lineNumber: 44
                                 },
                                 __self: this,
                                 children: "Login"
@@ -43218,7 +43221,7 @@ function NavbarView({ user  }) {
                                 href: "/register",
                                 __source: {
                                     fileName: "src/components/NavbarView/navbar-view.jsx",
-                                    lineNumber: 44
+                                    lineNumber: 45
                                 },
                                 __self: this,
                                 children: "Register"
@@ -43239,7 +43242,7 @@ $RefreshReg$(_c, "NavbarView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","./navbar-view.scss":"6aVVD","@parcel/transformer-js/src/esmodule-helpers.js":"gVtOw","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"e4cFO"}],"6aVVD":[function() {},{}],"fWYI5":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","./navbar-view.scss":"6aVVD","@parcel/transformer-js/src/esmodule-helpers.js":"gVtOw","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"e4cFO","../visibility-filter-input/visibility-filter-input":"7ZxGS"}],"6aVVD":[function() {},{}],"fWYI5":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$2cd9 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

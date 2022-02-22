@@ -10,7 +10,7 @@ export class DirectorView extends React.Component {
     const { director, onBackClick, movies } = this.props;
 
     return (
-      <Container fluid>
+      <Container fluid className="director-view">
         <Card>
           <Card.Body>
             <Card.Title>Director</Card.Title>
