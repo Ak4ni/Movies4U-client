@@ -41987,15 +41987,14 @@ var _reactBootstrap = require("react-bootstrap");
 class MovieCard extends _reactDefault.default.Component {
     render() {
         let { movie , addToFavourites  } = this.props;
-        const currentUser = localStorage.getItem('user');
-        const token = localStorage.getItem('token');
-        console.log(token, 'token');
+        const currentUser = localStorage.getItem("user");
+        const token = localStorage.getItem("token");
+        console.log(token, "token");
         const handleAddToFavourites = (e)=>{
             e.preventDefault();
-            console.log('add to Favourite movies');
+            console.log("add to Favourite movies");
             _axiosDefault.default.post(`https://themovies4u.herokuapp.com/users/${currentUser}/movies/${movie._id}`, {
-            }, // axios.post(`http://localhost:5000/users/${currentUser}/movies/${movie._id}`, {},
-            {
+            }, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -42005,14 +42004,15 @@ class MovieCard extends _reactDefault.default.Component {
                 alert("movie added to favourites");
                 addToFavourites(movie._id);
             }).catch((e1)=>{
-                console.log('error adding movie to favourites');
-                alert('movie NOT added to favourites');
+                console.log("error adding movie to favourites");
+                alert("movie not added to favourites");
             });
         };
         return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
+            className: "movie_card_background",
             __source: {
                 fileName: "src/components/MovieCard/movie-card.jsx",
-                lineNumber: 37
+                lineNumber: 40
             },
             __self: this,
             children: [
@@ -42024,7 +42024,7 @@ class MovieCard extends _reactDefault.default.Component {
                     className: "card_image",
                     __source: {
                         fileName: "src/components/MovieCard/movie-card.jsx",
-                        lineNumber: 38
+                        lineNumber: 41
                     },
                     __self: this
                 }),
@@ -42032,14 +42032,14 @@ class MovieCard extends _reactDefault.default.Component {
                     className: "card-body",
                     __source: {
                         fileName: "src/components/MovieCard/movie-card.jsx",
-                        lineNumber: 45
+                        lineNumber: 49
                     },
                     __self: this,
                     children: [
                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Title, {
                             __source: {
                                 fileName: "src/components/MovieCard/movie-card.jsx",
-                                lineNumber: 47
+                                lineNumber: 50
                             },
                             __self: this,
                             children: movie.Title
@@ -42048,7 +42048,7 @@ class MovieCard extends _reactDefault.default.Component {
                             className: "card-view",
                             __source: {
                                 fileName: "src/components/MovieCard/movie-card.jsx",
-                                lineNumber: 49
+                                lineNumber: 51
                             },
                             __self: this,
                             children: movie.Description
@@ -42057,18 +42057,64 @@ class MovieCard extends _reactDefault.default.Component {
                             to: `/movies/${movie._id}`,
                             __source: {
                                 fileName: "src/components/MovieCard/movie-card.jsx",
-                                lineNumber: 50
+                                lineNumber: 52
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
                                 variant: "link",
                                 __source: {
                                     fileName: "src/components/MovieCard/movie-card.jsx",
-                                    lineNumber: 51
+                                    lineNumber: 53
                                 },
                                 __self: this,
                                 children: "Open"
                             })
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                            to: `/directors/${movie.Director.Name}`,
+                            __source: {
+                                fileName: "src/components/MovieCard/movie-card.jsx",
+                                lineNumber: 55
+                            },
+                            __self: this,
+                            children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
+                                variant: "link",
+                                __source: {
+                                    fileName: "src/components/MovieCard/movie-card.jsx",
+                                    lineNumber: 56
+                                },
+                                __self: this,
+                                children: "Director"
+                            })
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                            to: `/genres/${movie.Genre.Name}`,
+                            __source: {
+                                fileName: "src/components/MovieCard/movie-card.jsx",
+                                lineNumber: 58
+                            },
+                            __self: this,
+                            children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
+                                variant: "link",
+                                __source: {
+                                    fileName: "src/components/MovieCard/movie-card.jsx",
+                                    lineNumber: 59
+                                },
+                                __self: this,
+                                children: "Genre"
+                            })
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
+                            className: "button",
+                            variant: "dark",
+                            type: "submit",
+                            onClick: handleAddToFavourites,
+                            __source: {
+                                fileName: "src/components/MovieCard/movie-card.jsx",
+                                lineNumber: 61
+                            },
+                            __self: this,
+                            children: "Favorite"
                         })
                     ]
                 })
@@ -43094,14 +43140,14 @@ function NavbarView({ user  }) {
         variant: "dark",
         __source: {
             fileName: "src/components/NavbarView/navbar-view.jsx",
-            lineNumber: 25
+            lineNumber: 24
         },
         __self: this,
         children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
             fluid: true,
             __source: {
                 fileName: "src/components/NavbarView/navbar-view.jsx",
-                lineNumber: 26
+                lineNumber: 25
             },
             __self: this,
             children: [
@@ -43110,7 +43156,7 @@ function NavbarView({ user  }) {
                     href: "/login",
                     __source: {
                         fileName: "src/components/NavbarView/navbar-view.jsx",
-                        lineNumber: 27
+                        lineNumber: 26
                     },
                     __self: this,
                     children: "Movies4U"
@@ -43119,7 +43165,7 @@ function NavbarView({ user  }) {
                     "aria-controls": "responsive-navbar-nav",
                     __source: {
                         fileName: "src/components/NavbarView/navbar-view.jsx",
-                        lineNumber: 30
+                        lineNumber: 29
                     },
                     __self: this
                 }),
@@ -43127,14 +43173,14 @@ function NavbarView({ user  }) {
                     id: "responsive-navbar-nav",
                     __source: {
                         fileName: "src/components/NavbarView/navbar-view.jsx",
-                        lineNumber: 31
+                        lineNumber: 30
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Nav, {
                         className: "ml-auto",
                         __source: {
                             fileName: "src/components/NavbarView/navbar-view.jsx",
-                            lineNumber: 32
+                            lineNumber: 31
                         },
                         __self: this,
                         children: [
@@ -43142,7 +43188,7 @@ function NavbarView({ user  }) {
                                 href: "/profile",
                                 __source: {
                                     fileName: "src/components/NavbarView/navbar-view.jsx",
-                                    lineNumber: 33
+                                    lineNumber: 32
                                 },
                                 __self: this,
                                 children: user
@@ -43154,7 +43200,7 @@ function NavbarView({ user  }) {
                                 },
                                 __source: {
                                     fileName: "src/components/NavbarView/navbar-view.jsx",
-                                    lineNumber: 35
+                                    lineNumber: 34
                                 },
                                 __self: this,
                                 children: "Logout"
@@ -43163,7 +43209,7 @@ function NavbarView({ user  }) {
                                 href: "/login",
                                 __source: {
                                     fileName: "src/components/NavbarView/navbar-view.jsx",
-                                    lineNumber: 44
+                                    lineNumber: 43
                                 },
                                 __self: this,
                                 children: "Login"
@@ -43172,7 +43218,7 @@ function NavbarView({ user  }) {
                                 href: "/register",
                                 __source: {
                                     fileName: "src/components/NavbarView/navbar-view.jsx",
-                                    lineNumber: 45
+                                    lineNumber: 44
                                 },
                                 __self: this,
                                 children: "Register"
