@@ -4,3 +4,10 @@
   background-color: #080808;
   color: #f5f3f3;
 }
+.card-view{
+  overflow: hidden;
+  width:100px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  }

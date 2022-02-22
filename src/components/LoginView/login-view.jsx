@@ -97,7 +97,7 @@ export function LoginView(props) {
                     {/* code added here to display validation error */}
                     {passwordErr && <p>{passwordErr}</p>}
                   </Form.Group>
-                  <div className="mt-3">
+                  <div className="profile-view-button">
                     <Button
                       variant="success"
                       type="submit"

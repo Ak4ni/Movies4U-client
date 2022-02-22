@@ -57,6 +57,27 @@ export class MainView extends React.Component {
     });
   }
 
+  getUserData(token) {
+    console.log("get user data");
+    axios
+      .get(
+        "https://themovies4u.herokuapp.com//users/" +
+          localStorage.getItem("user"),
+        {
+          // axios.get('http://localhost:5000/users/' + localStorage.getItem('user'), {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      )
+      .then((response) => {
+        console.log("user", response.data);
+        // Assign the result to the state
+        this.setState({ userData: response.data });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
   getMovies(token) {
     axios
       .get(`https://themovies4u.herokuapp.com/movies`, {
@@ -72,6 +93,11 @@ export class MainView extends React.Component {
         console.log(error);
       });
   }
+  setSelectedMovie(movie) {
+    this.setState({
+      selectedMovie: movie,
+    });
+  }
 
   render() {
     const { user } = this.state;
@@ -85,13 +111,11 @@ export class MainView extends React.Component {
             <Route
               exact
               path="/"
-              render={ () => {
+              render={() => {
                 if (!user)
                   return (
                     <Col>
-                      <LoginView
-                        onLoggedIn={(user) => this.onLoggedIn(user)}
-                      />
+                      <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
                     </Col>
                   );
                 if (movies.length === 0) return <div className="main-view" />;
@@ -163,8 +187,12 @@ export class MainView extends React.Component {
                 return (
                   <Col md={8}>
                     <ProfileView
+                      
+                      
                       movies={movies}
                       onBackClick={() => history.goBack()}
+                      onLoggedOut={() => this.onLoggedOut}
+                      movies={movies}
                     />
                   </Col>
                 );
@@ -237,8 +265,8 @@ export class MainView extends React.Component {
     );
   }
 }
-let mapStateToProps = state => {
-  return { movies: state.movies }
-}
+let mapStateToProps = (state) => {
+  return { movies: state.movies };
+};
 
 export default connect(mapStateToProps, { setMovies })(MainView);

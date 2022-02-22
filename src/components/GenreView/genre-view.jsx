@@ -40,6 +40,7 @@ export class GenreView extends React.Component {
                 className="fav-poster"
                 variant="top"
                 src={movie.ImagePath}
+                crossOrigin="anonynous"
               />
               <Card.Body style={{ backgroundColor: "black" }}>
                 <Card.Title className="movie_title">{movie.Title}</Card.Title>
