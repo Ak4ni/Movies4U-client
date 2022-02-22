@@ -35,7 +35,7 @@ const container = document.getElementsByClassName("app-container")[0];
 ReactDOM.render(React.createElement(Movies4UApplication), container);
 
 const cors = require("cors");
-let allowedOrigins = ["https://themovies4u.netlify.app/"];
+let allowedOrigins = ['http://localhost:8080', 'http://testsite.com', 'http://localhost:1234', 'https://themovies4u.netlify.app/'];
 
 app.use(
   cors({
