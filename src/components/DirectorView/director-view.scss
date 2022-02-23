@@ -2,3 +2,20 @@
     color: rgba(255, 255, 255, 0);
 }
 
+.card-director{
+    height: inherit;
+    padding: 10px;
+}
+
+.row-card{
+   padding: 10px;
+   padding-left: 30px;
+   flex-direction: row;
+}
+
+.fav-poster{
+    height: 100%;
+    border-width: 10px;
+    flex-basis: 200%;
+    flex-direction: column;
+}

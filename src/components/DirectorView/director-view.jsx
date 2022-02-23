@@ -11,7 +11,7 @@ export class DirectorView extends React.Component {
 
     return (
       <Container fluid className="director-view">
-        <Card>
+        <Card className="card-director">
           <Card.Body>
             <Card.Title>Director</Card.Title>
             <Card.Text>
@@ -41,9 +41,9 @@ export class DirectorView extends React.Component {
             </Button>
           </Card.Body>
         </Card>
-        <Row>
+        <Row className="row-card">
           {movies.map((movie) => (
-            <Card className="favorite-movie card-content" key={movie._id}>
+            <Card className="card-content" key={movie._id}>
               <Card.Img
                 className="fav-poster"
                 variant="top"

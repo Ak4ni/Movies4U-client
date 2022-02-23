@@ -22,7 +22,7 @@ export class MovieView extends React.Component {
     const { movie, onBackClick } = this.props;
 
     return (
-      <Container fluid className="movie-view">
+      <Container fluid >
         <Row>
           <Col>
             <div className="movie-view">

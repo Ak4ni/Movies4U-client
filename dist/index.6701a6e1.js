@@ -29924,18 +29924,21 @@ function LoginView(props) {
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.CardGroup, {
+                    class: true,
                     __source: {
                         fileName: "src/components/LoginView/login-view.jsx",
                         lineNumber: 74
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card, {
+                        className: "card",
                         __source: {
                             fileName: "src/components/LoginView/login-view.jsx",
                             lineNumber: 75
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Body, {
+                            className: "card-body",
                             __source: {
                                 fileName: "src/components/LoginView/login-view.jsx",
                                 lineNumber: 76
@@ -42180,7 +42183,6 @@ class MovieView extends _reactDefault.default.Component {
         const { movie , onBackClick  } = this.props;
         return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
             fluid: true,
-            className: "movie-view",
             __source: {
                 fileName: "src/components/MovieView/movie-view.jsx",
                 lineNumber: 25
@@ -42409,6 +42411,7 @@ class DirectorView extends _reactDefault.default.Component {
             __self: this,
             children: [
                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card, {
+                    className: "card-director",
                     __source: {
                         fileName: "src/components/DirectorView/director-view.jsx",
                         lineNumber: 14
@@ -42553,13 +42556,14 @@ class DirectorView extends _reactDefault.default.Component {
                     })
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                    className: "row-card",
                     __source: {
                         fileName: "src/components/DirectorView/director-view.jsx",
                         lineNumber: 44
                     },
                     __self: this,
                     children: movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
-                            className: "favorite-movie card-content",
+                            className: "card-content",
                             __source: {
                                 fileName: "src/components/DirectorView/director-view.jsx",
                                 lineNumber: 46
@@ -42644,6 +42648,7 @@ class GenreView extends _reactDefault.default.Component {
             __self: this,
             children: [
                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card, {
+                    className: "card-genre",
                     __source: {
                         fileName: "src/components/GenreView/genre-view.jsx",
                         lineNumber: 14
@@ -42734,13 +42739,14 @@ class GenreView extends _reactDefault.default.Component {
                     })
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                    className: "row-card",
                     __source: {
                         fileName: "src/components/GenreView/genre-view.jsx",
                         lineNumber: 36
                     },
                     __self: this,
                     children: movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
-                            className: "favorite-movie card-content",
+                            className: "card-content",
                             __source: {
                                 fileName: "src/components/GenreView/genre-view.jsx",
                                 lineNumber: 38

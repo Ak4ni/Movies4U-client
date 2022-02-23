@@ -1,0 +1,20 @@
+.row-card{
+    padding: 10px;
+    padding-left: 30px;
+    flex-direction: row;
+ }
+
+ .card-genre{
+     padding: 10px;
+ }
+
+ .fav-poster{
+    height: 100%;
+    border-width: 10px;
+    flex-basis: 200%;
+    flex-direction: column;
+}
+
+.movie-poster{
+    height: inherit;
+}
