@@ -43131,6 +43131,8 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactBootstrap = require("react-bootstrap");
 var _visibilityFilterInput = require("../visibility-filter-input/visibility-filter-input");
 var _visibilityFilterInputDefault = parcelHelpers.interopDefault(_visibilityFilterInput);
+var _logoPng = require("../../Logo/logo.png");
+var _logoPngDefault = parcelHelpers.interopDefault(_logoPng);
 var _navbarViewScss = require("./navbar-view.scss");
 function NavbarView({ user  }) {
     const onLoggedOut = ()=>{
@@ -43160,7 +43162,7 @@ function NavbarView({ user  }) {
             },
             __self: this,
             children: [
-                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Brand, {
+                /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Navbar.Brand, {
                     className: "navbar-logo",
                     href: "/login",
                     __source: {
@@ -43168,13 +43170,26 @@ function NavbarView({ user  }) {
                         lineNumber: 27
                     },
                     __self: this,
-                    children: "Movies4U"
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                            alt: "",
+                            src: _logoPngDefault.default,
+                            height: "100",
+                            className: "image",
+                            __source: {
+                                fileName: "src/components/NavbarView/navbar-view.jsx",
+                                lineNumber: 28
+                            },
+                            __self: this
+                        }),
+                        ''
+                    ]
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Toggle, {
                     "aria-controls": "responsive-navbar-nav",
                     __source: {
                         fileName: "src/components/NavbarView/navbar-view.jsx",
-                        lineNumber: 30
+                        lineNumber: 35
                     },
                     __self: this
                 }),
@@ -43182,14 +43197,14 @@ function NavbarView({ user  }) {
                     id: "responsive-navbar-nav",
                     __source: {
                         fileName: "src/components/NavbarView/navbar-view.jsx",
-                        lineNumber: 31
+                        lineNumber: 36
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Nav, {
                         className: "ml-auto",
                         __source: {
                             fileName: "src/components/NavbarView/navbar-view.jsx",
-                            lineNumber: 32
+                            lineNumber: 37
                         },
                         __self: this,
                         children: [
@@ -43197,7 +43212,7 @@ function NavbarView({ user  }) {
                                 href: "/profile",
                                 __source: {
                                     fileName: "src/components/NavbarView/navbar-view.jsx",
-                                    lineNumber: 33
+                                    lineNumber: 38
                                 },
                                 __self: this,
                                 children: user
@@ -43209,7 +43224,7 @@ function NavbarView({ user  }) {
                                 },
                                 __source: {
                                     fileName: "src/components/NavbarView/navbar-view.jsx",
-                                    lineNumber: 35
+                                    lineNumber: 40
                                 },
                                 __self: this,
                                 children: "Logout"
@@ -43218,7 +43233,7 @@ function NavbarView({ user  }) {
                                 href: "/login",
                                 __source: {
                                     fileName: "src/components/NavbarView/navbar-view.jsx",
-                                    lineNumber: 44
+                                    lineNumber: 49
                                 },
                                 __self: this,
                                 children: "Login"
@@ -43227,7 +43242,7 @@ function NavbarView({ user  }) {
                                 href: "/register",
                                 __source: {
                                     fileName: "src/components/NavbarView/navbar-view.jsx",
-                                    lineNumber: 45
+                                    lineNumber: 50
                                 },
                                 __self: this,
                                 children: "Register"
@@ -43248,7 +43263,45 @@ $RefreshReg$(_c, "NavbarView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","./navbar-view.scss":"6aVVD","@parcel/transformer-js/src/esmodule-helpers.js":"gVtOw","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"e4cFO","../visibility-filter-input/visibility-filter-input":"7ZxGS"}],"6aVVD":[function() {},{}],"fWYI5":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","../visibility-filter-input/visibility-filter-input":"7ZxGS","./navbar-view.scss":"6aVVD","@parcel/transformer-js/src/esmodule-helpers.js":"gVtOw","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"e4cFO","../../Logo/logo.png":"gh9oB"}],"6aVVD":[function() {},{}],"gh9oB":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "logo.5d2e872f.png";
+
+},{"./helpers/bundle-url":"kwOVe"}],"kwOVe":[function(require,module,exports) {
+"use strict";
+var bundleURL = {
+};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return '/';
+}
+function getBaseURL(url) {
+    return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
+} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
+    if (!matches) throw new Error('Origin not found');
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"fWYI5":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$2cd9 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
