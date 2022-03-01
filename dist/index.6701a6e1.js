@@ -43209,6 +43209,7 @@ function NavbarView({ user  }) {
                         __self: this,
                         children: [
                             isAuth() && /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Link, {
+                                className: "user",
                                 href: "/profile",
                                 __source: {
                                     fileName: "src/components/NavbarView/navbar-view.jsx",
