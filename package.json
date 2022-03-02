@@ -2,7 +2,7 @@
   "name": "github",
   "version": "1.0.0",
   "description": "",
-  "main": ".eslintrc.js",
+  "main": "src/index.html",
   "dependencies": {
     "abortcontroller-polyfill": "^1.7.3",
     "acorn": "^8.7.0",
@@ -213,6 +213,7 @@
     "open": "^7.4.2",
     "optionator": "^0.9.1",
     "ordered-binary": "^1.2.4",
+    "parcel": "^2.0.0-rc.0",
     "parent-module": "^1.0.1",
     "pascalcase": "^0.1.1",
     "path-is-absolute": "^1.0.1",
