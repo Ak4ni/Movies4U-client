@@ -10,8 +10,8 @@ export class DirectorView extends React.Component {
     const { director, onBackClick, movies } = this.props;
 
     return (
-      <Container fluid>
-        <Card>
+      <Container fluid className="director-view">
+        <Card className="card-director">
           <Card.Body>
             <Card.Title>Director</Card.Title>
             <Card.Text>
@@ -41,14 +41,16 @@ export class DirectorView extends React.Component {
             </Button>
           </Card.Body>
         </Card>
-        <Row>
+        <Row className="row-card">
           {movies.map((movie) => (
-            <Card className="favorite-movie card-content" key={movie._id}>
+            <Card className="card-content" key={movie._id}>
               <Card.Img
                 className="fav-poster"
                 variant="top"
                 src={movie.ImagePath}
-              />
+                crossOrigin="anonymous"
+                alt="Card Image"
+                />
               <Card.Body style={{ backgroundColor: "black" }}>
                 <Card.Title className="movie_title">{movie.Title}</Card.Title>
               </Card.Body>

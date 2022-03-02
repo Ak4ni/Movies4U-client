@@ -71,9 +71,9 @@ export function LoginView(props) {
     <Container className="profile-view" align="center">
       <Row>
         <Col>
-          <CardGroup>
-            <Card>
-              <Card.Body>
+          <CardGroup class>
+            <Card className="card">
+              <Card.Body className="card-body">
                 <Card.Title>Please login</Card.Title>
                 <Form>
                   <Form.Group className="mb-3" controlId="formUsername">
@@ -97,7 +97,7 @@ export function LoginView(props) {
                     {/* code added here to display validation error */}
                     {passwordErr && <p>{passwordErr}</p>}
                   </Form.Group>
-                  <div className="mt-3">
+                  <div className="profile-view-button">
                     <Button
                       variant="success"
                       type="submit"

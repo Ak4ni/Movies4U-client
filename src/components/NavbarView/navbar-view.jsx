@@ -1,10 +1,10 @@
 import React from "react";
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
-
+import visibilityFilterInput from "../visibility-filter-input/visibility-filter-input";
+import Logo from "../../Logo/logo.png";
 import "./navbar-view.scss";
 
-
-export function NavbarView({user}) {
+export function NavbarView({ user }) {
   const onLoggedOut = () => {
     localStorage.clear();
     window.open("/", "_self");
@@ -25,12 +25,17 @@ export function NavbarView({user}) {
     <Navbar className="main-nav" sticky="top" expand="lg" variant="dark">
       <Container fluid>
         <Navbar.Brand className="navbar-logo" href="/login">
-          Movies4U
+        <img
+            alt=""
+            src={Logo}
+            height="100"
+            className="image"
+          />{''}
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ml-auto">
-            {isAuth() && <Nav.Link href="/profile">{user}</Nav.Link>}
+            {isAuth() && <Nav.Link className="user" href="/profile">{user}</Nav.Link>}
             {isAuth() && (
               <Button
                 variant="link"
