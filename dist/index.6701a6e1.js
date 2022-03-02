@@ -43131,7 +43131,7 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactBootstrap = require("react-bootstrap");
 var _visibilityFilterInput = require("../visibility-filter-input/visibility-filter-input");
 var _visibilityFilterInputDefault = parcelHelpers.interopDefault(_visibilityFilterInput);
-var _logoPng = require("../Logo/logo.png");
+var _logoPng = require("../logo/logo.png");
 var _logoPngDefault = parcelHelpers.interopDefault(_logoPng);
 var _navbarViewScss = require("./navbar-view.scss");
 function NavbarView({ user  }) {
@@ -43264,8 +43264,8 @@ $RefreshReg$(_c, "NavbarView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","../visibility-filter-input/visibility-filter-input":"7ZxGS","./navbar-view.scss":"6aVVD","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","../Logo/logo.png":"8V5yy"}],"6aVVD":[function() {},{}],"8V5yy":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "logo.6157bbb8.png";
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","../visibility-filter-input/visibility-filter-input":"7ZxGS","./navbar-view.scss":"6aVVD","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","../logo/logo.png":"k28ii"}],"6aVVD":[function() {},{}],"k28ii":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "logo.9be82e71.png";
 
 },{"./helpers/bundle-url":"8YnfL"}],"8YnfL":[function(require,module,exports) {
 "use strict";
