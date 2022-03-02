@@ -43264,7 +43264,7 @@ $RefreshReg$(_c, "NavbarView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","../visibility-filter-input/visibility-filter-input":"7ZxGS","./navbar-view.scss":"6aVVD","@parcel/transformer-js/src/esmodule-helpers.js":"gVtOw","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"e4cFO","../../Logo/logo.png":"gh9oB"}],"6aVVD":[function() {},{}],"gh9oB":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","../visibility-filter-input/visibility-filter-input":"7ZxGS","../../Logo/logo.png":"gh9oB","./navbar-view.scss":"6aVVD","@parcel/transformer-js/src/esmodule-helpers.js":"gVtOw","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"e4cFO"}],"gh9oB":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "logo.5d2e872f.png";
 
 },{"./helpers/bundle-url":"kwOVe"}],"kwOVe":[function(require,module,exports) {
@@ -43302,7 +43302,7 @@ exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
-},{}],"fWYI5":[function(require,module,exports) {
+},{}],"6aVVD":[function() {},{}],"fWYI5":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$2cd9 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
