@@ -1,7 +1,7 @@
 import React from "react";
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
 import visibilityFilterInput from "../visibility-filter-input/visibility-filter-input";
-import Logo from "../../Logo/logo.png";
+import Logo from "src/Logo/Logo.png";
 import "./navbar-view.scss";
 
 export function NavbarView({ user }) {
