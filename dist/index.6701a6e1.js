@@ -26404,7 +26404,6 @@ var validators = validator.validators;
         config.url = configOrUrl;
     } else config = configOrUrl || {
     };
-    if (!config.url) throw new Error('Provided config url is not valid');
     config = mergeConfig(this.defaults, config);
     // Set config.method
     if (config.method) config.method = config.method.toLowerCase();
@@ -26460,7 +26459,6 @@ var validators = validator.validators;
     return promise;
 };
 Axios.prototype.getUri = function getUri(config) {
-    if (!config.url) throw new Error('Provided config url is not valid');
     config = mergeConfig(this.defaults, config);
     return buildURL(config.url, config.params, config.paramsSerializer).replace(/^\?/, '');
 };
@@ -27485,7 +27483,7 @@ module.exports = {
 
 },{"../env/data":"7dluA"}],"7dluA":[function(require,module,exports) {
 module.exports = {
-    "version": "0.25.0"
+    "version": "0.26.0"
 };
 
 },{}],"6kJtU":[function(require,module,exports) {
@@ -28530,7 +28528,7 @@ if (typeof window !== "undefined") {
     global[key] = "esm";
 }
 
-},{"@babel/runtime/helpers/esm/inheritsLoose":"eO0be","react":"6TuXu","prop-types":"1tgq3","history":"6R8lq","tiny-warning":"4xDJt","mini-create-react-context":"bwjcK","tiny-invariant":"kiE0c","@babel/runtime/helpers/esm/extends":"bKAu6","path-to-regexp":"6SN7C","react-is":"5wFcP","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"3Rubg","hoist-non-react-statics":"jfzb6","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"eO0be":[function(require,module,exports) {
+},{"@babel/runtime/helpers/esm/inheritsLoose":"eO0be","react":"6TuXu","prop-types":"1tgq3","history":"6R8lq","tiny-warning":"4xDJt","mini-create-react-context":"bwjcK","tiny-invariant":"kiE0c","@babel/runtime/helpers/esm/extends":"bKAu6","path-to-regexp":"1CwUw","react-is":"5wFcP","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"3Rubg","hoist-non-react-statics":"jfzb6","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"eO0be":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _setPrototypeOfJs = require("./setPrototypeOf.js");
@@ -29529,7 +29527,7 @@ function createReactContext(defaultValue, calculateChangedBits) {
 var index = _reactDefault.default.createContext || createReactContext;
 exports.default = index;
 
-},{"react":"6TuXu","@babel/runtime/helpers/esm/inheritsLoose":"eO0be","prop-types":"1tgq3","tiny-warning":"4xDJt","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"6SN7C":[function(require,module,exports) {
+},{"react":"6TuXu","@babel/runtime/helpers/esm/inheritsLoose":"eO0be","prop-types":"1tgq3","tiny-warning":"4xDJt","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"1CwUw":[function(require,module,exports) {
 var isarray = require('isarray');
 /**
  * Expose `pathToRegexp`.
@@ -29837,7 +29835,7 @@ module.exports.tokensToRegExp = tokensToRegExp;
     return stringToRegexp(path, keys, options);
 }
 
-},{"isarray":"1PYkb"}],"1PYkb":[function(require,module,exports) {
+},{"isarray":"cSDKV"}],"cSDKV":[function(require,module,exports) {
 module.exports = Array.isArray || function(arr) {
     return Object.prototype.toString.call(arr) == '[object Array]';
 };
@@ -36933,63 +36931,73 @@ var _ssr = require("@react-aria/ssr");
 },{"@react-aria/ssr":"7lutf","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"7lutf":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-/**
- * When using SSR with React Aria, applications must be wrapped in an SSRProvider.
- * This ensures that auto generated ids are consistent between the client and server.
- */ parcelHelpers.export(exports, "SSRProvider", ()=>SSRProvider
+parcelHelpers.export(exports, "SSRProvider", ()=>$9d939cbc98267846$export$9f8ac96af4b1b2ae
 );
-/** @private */ parcelHelpers.export(exports, "useSSRSafeId", ()=>useSSRSafeId
+parcelHelpers.export(exports, "useSSRSafeId", ()=>$9d939cbc98267846$export$619500959fc48b26
 );
-/**
- * Returns whether the component is currently being server side rendered or
- * hydrated on the client. Can be used to delay browser-specific rendering
- * until after hydration.
- */ parcelHelpers.export(exports, "useIsSSR", ()=>useIsSSR
+parcelHelpers.export(exports, "useIsSSR", ()=>$9d939cbc98267846$export$535bd6ca7f90a273
 );
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+function $parcel$export(e, n, v, s) {
+    Object.defineProperty(e, n, {
+        get: v,
+        set: s,
+        enumerable: true,
+        configurable: true
+    });
+}
+var $9d939cbc98267846$exports = {
+};
+$parcel$export($9d939cbc98267846$exports, "SSRProvider", ()=>$9d939cbc98267846$export$9f8ac96af4b1b2ae
+);
+$parcel$export($9d939cbc98267846$exports, "useSSRSafeId", ()=>$9d939cbc98267846$export$619500959fc48b26
+);
+$parcel$export($9d939cbc98267846$exports, "useIsSSR", ()=>$9d939cbc98267846$export$535bd6ca7f90a273
+);
 // Default context value to use in case there is no SSRProvider. This is fine for
 // client-only apps. In order to support multiple copies of React Aria potentially
 // being on the page at once, the prefix is set to a random number. SSRProvider
 // will reset this to zero for consistency between server and client, so in the
 // SSR case multiple copies of React Aria is not supported.
-const $f01a183cc7bdff77849e49ad26eb904$var$defaultContext = {
+const $9d939cbc98267846$var$defaultContext = {
     prefix: String(Math.round(Math.random() * 10000000000)),
     current: 0
 };
-const $f01a183cc7bdff77849e49ad26eb904$var$SSRContext = /*#__PURE__*/ _reactDefault.default.createContext($f01a183cc7bdff77849e49ad26eb904$var$defaultContext);
-function SSRProvider(props) {
-    let cur = _react.useContext($f01a183cc7bdff77849e49ad26eb904$var$SSRContext);
+const $9d939cbc98267846$var$SSRContext = /*#__PURE__*/ _reactDefault.default.createContext($9d939cbc98267846$var$defaultContext);
+function $9d939cbc98267846$export$9f8ac96af4b1b2ae(props) {
+    let cur = _react.useContext($9d939cbc98267846$var$SSRContext);
     let value = _react.useMemo(()=>({
             // If this is the first SSRProvider, start with an empty string prefix, otherwise
             // append and increment the counter.
-            prefix: cur === $f01a183cc7bdff77849e49ad26eb904$var$defaultContext ? '' : cur.prefix + "-" + ++cur.current,
+            prefix: cur === $9d939cbc98267846$var$defaultContext ? '' : `${cur.prefix}-${++cur.current}`,
             current: 0
         })
     , [
         cur
     ]);
-    return(/*#__PURE__*/ _reactDefault.default.createElement($f01a183cc7bdff77849e49ad26eb904$var$SSRContext.Provider, {
+    return(/*#__PURE__*/ _reactDefault.default.createElement($9d939cbc98267846$var$SSRContext.Provider, {
         value: value
     }, props.children));
 }
-let $f01a183cc7bdff77849e49ad26eb904$var$canUseDOM = Boolean(typeof window !== 'undefined' && window.document && window.document.createElement);
-function useSSRSafeId(defaultId) {
-    let ctx = _react.useContext($f01a183cc7bdff77849e49ad26eb904$var$SSRContext); // If we are rendering in a non-DOM environment, and there's no SSRProvider,
+let $9d939cbc98267846$var$canUseDOM = Boolean(typeof window !== 'undefined' && window.document && window.document.createElement);
+function $9d939cbc98267846$export$619500959fc48b26(defaultId) {
+    let ctx = _react.useContext($9d939cbc98267846$var$SSRContext);
+    // If we are rendering in a non-DOM environment, and there's no SSRProvider,
     // provide a warning to hint to the developer to add one.
-    if (ctx === $f01a183cc7bdff77849e49ad26eb904$var$defaultContext && !$f01a183cc7bdff77849e49ad26eb904$var$canUseDOM) console.warn('When server rendering, you must wrap your application in an <SSRProvider> to ensure consistent ids are generated between the client and server.');
-    return _react.useMemo(()=>defaultId || "react-aria" + ctx.prefix + "-" + ++ctx.current
+    if (ctx === $9d939cbc98267846$var$defaultContext && !$9d939cbc98267846$var$canUseDOM) console.warn('When server rendering, you must wrap your application in an <SSRProvider> to ensure consistent ids are generated between the client and server.');
+    return _react.useMemo(()=>defaultId || `react-aria${ctx.prefix}-${++ctx.current}`
     , [
         defaultId
     ]);
 }
-function useIsSSR() {
-    let cur = _react.useContext($f01a183cc7bdff77849e49ad26eb904$var$SSRContext);
-    let isInSSRContext = cur !== $f01a183cc7bdff77849e49ad26eb904$var$defaultContext;
-    let [isSSR, setIsSSR] = _react.useState(isInSSRContext); // If on the client, and the component was initially server rendered,
+function $9d939cbc98267846$export$535bd6ca7f90a273() {
+    let cur = _react.useContext($9d939cbc98267846$var$SSRContext);
+    let isInSSRContext = cur !== $9d939cbc98267846$var$defaultContext;
+    let [isSSR, setIsSSR] = _react.useState(isInSSRContext);
+    // If on the client, and the component was initially server rendered,
     // then schedule a layout effect to update the component after hydration.
-    if (typeof window !== 'undefined' && isInSSRContext) // This if statement technically breaks the rules of hooks, but is safe
-    // because the condition never changes after mounting.
+    if (typeof window !== 'undefined' && isInSSRContext) // because the condition never changes after mounting.
     // eslint-disable-next-line react-hooks/rules-of-hooks
     _react.useLayoutEffect(()=>{
         setIsSSR(false);
@@ -43264,7 +43272,7 @@ $RefreshReg$(_c, "NavbarView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","../visibility-filter-input/visibility-filter-input":"7ZxGS","./navbar-view.scss":"6aVVD","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","../logo/logo.png":"k28ii"}],"6aVVD":[function() {},{}],"k28ii":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","../visibility-filter-input/visibility-filter-input":"7ZxGS","../logo/logo.png":"k28ii","./navbar-view.scss":"6aVVD","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"k28ii":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "logo.9be82e71.png";
 
 },{"./helpers/bundle-url":"8YnfL"}],"8YnfL":[function(require,module,exports) {
@@ -43302,7 +43310,7 @@ exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
-},{}],"fWYI5":[function(require,module,exports) {
+},{}],"6aVVD":[function() {},{}],"fWYI5":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$2cd9 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
