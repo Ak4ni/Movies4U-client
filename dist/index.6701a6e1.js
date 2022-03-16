@@ -43084,6 +43084,7 @@ function RegistrationView(props) {
                                             ]
                                         }),
                                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
+                                            className: "reg-button",
                                             variant: "outline-light",
                                             type: "submit",
                                             onClick: handleSubmit,
