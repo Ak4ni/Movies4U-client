@@ -192,7 +192,6 @@ export class MainView extends React.Component {
                       movies={movies}
                       onBackClick={() => history.goBack()}
                       onLoggedOut={() => this.onLoggedOut}
-                      movies={movies}
                     />
                   </Col>
                 );
