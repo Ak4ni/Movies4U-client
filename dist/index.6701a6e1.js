@@ -42040,7 +42040,7 @@ class MovieCard extends _reactDefault.default.Component {
                     __self: this
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Body, {
-                    className: "card-body",
+                    className: "movie_card",
                     __source: {
                         fileName: "src/components/MovieCard/movie-card.jsx",
                         lineNumber: 49
@@ -43084,6 +43084,7 @@ function RegistrationView(props) {
                                             ]
                                         }),
                                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
+                                            className: "reg-button",
                                             variant: "outline-light",
                                             type: "submit",
                                             onClick: handleSubmit,

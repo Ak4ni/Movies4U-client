@@ -133,7 +133,7 @@ export function RegistrationView(props) {
                     />
                   </Form.Group>
 
-                  <Button
+                  <Button className="reg-button"
                     variant="outline-light"
                     type="submit"
                     onClick={handleSubmit}
